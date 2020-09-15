@@ -1,0 +1,5 @@
+add x1, x2, x3
+addi x1, x2, 3
+sub x14, x15, x3
+loop:
+addo x0, x0, 0x

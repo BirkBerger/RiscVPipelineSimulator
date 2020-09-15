@@ -1,19 +1,29 @@
 Feature: Assembly parser
   Description: input different assembly snippets and check output
 
-  Scenario: Too many instruction fields
+#  Scenario: Too many instruction fields
 
   Scenario: Not enough instruction fields specified by opcode
-    Given that the assembly editor holds the content of "invalidFields.txt"
+    Given that the assembly editor holds the content of "missingFields.txt"
     Then the error message is thrown
       """
       Error in...
       line 1:
       - register is missing
+      - register is missing
 
       """
 
-#  Scenario: Opcode does not exist
+  Scenario: Opcode does not exist
+    Given that the assembly editor holds the content of "invalidOpcode.txt"
+    Then the error message is thrown
+      """
+      Error in...
+      line 5:
+      - the instruction is not recognized
+
+      """
+
 #
 #  Scenario: Register does not exist
 #

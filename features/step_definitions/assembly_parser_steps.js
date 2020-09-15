@@ -18,7 +18,5 @@ Given("that the assembly editor holds the content of {string}", function (textFi
 
 
 Then("the error message is thrown", function (expectedErrorMessage) {
-    console.log("expected: " + expectedErrorMessage);
-    console.log("actual: " + errorMessageHolder.getErrorMessage());
     assert.equal(expectedErrorMessage, errorMessageHolder.getErrorMessage());
 });
