@@ -5,7 +5,7 @@ Feature: Assembly parser
 
   Scenario: Not enough instruction fields specified by opcode
     Given that the assembly editor holds the content of "invalidFields.txt"
-    Then the error message "Error in...\nline 2:- Expected 2 or 3 instruction fields but found 1"
+    Then the error message "- register is missing\n"
 
 #  Scenario: Opcode does not exist
 #
