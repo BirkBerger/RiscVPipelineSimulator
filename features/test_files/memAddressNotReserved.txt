@@ -1,0 +1,6 @@
+again:
+lr.d x10, (x21)
+sc.d x11, x23, (x20)
+bne x11, x0, again
+sc.d x11, x23, (x21)
+addi x23, x10, 0
