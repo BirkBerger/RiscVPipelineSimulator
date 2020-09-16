@@ -1,6 +1,11 @@
-addi s0, x0, 1
-addi s1, x0, 5
-addi s2, x0, 10
-addi t0, x0, 1
-beq s0, t0, somma
-addi t1, x32, 2
+addi x0, x0, 1
+addi x1, x0, 5
+addi x2, x0, 10
+sometimes:
+addi x0, x0, 1
+beq x0, x0, sometimes
+addi x1, x32, 2
+addi x2, x0, 10
+addi x0, x0, 1
+addi x2, xxdf, 10
+addi x0, x0, 1

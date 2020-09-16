@@ -1,0 +1,9 @@
+hey:
+here:
+are:
+some:
+labels:
+addi x3, x0, 16
+mul x2, x3, x3
+beq x2, x3, anUndeclaredLabel
+labels:
