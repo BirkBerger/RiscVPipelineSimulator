@@ -4,7 +4,7 @@
 /test
 /test*.html
 /index.html
-/mode/*/*test.js
+/mode/*/*my.js
 /mode/*/*.html
 /mode/index.html
 .*
