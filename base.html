@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
     <head>
-            <title>Pipeline simulator</title>
+        <title>Pipeline simulator</title>
 
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
 
-            <script type="text/javascript" src="codemirror/lib/codemirror.js"></script>
-            <link rel="stylesheet" href="codemirror/lib/codemirror.css">
-            <script type="text/javascript" src="codemirror/mode/verilog/verilog.js"></script>
-            <script type="text/javascript" src="codemirror/theme/eclipse.css"></script>
+        <script type="text/javascript" src="codemirror/lib/codemirror.js"></script>
+        <link rel="stylesheet" href="codemirror/lib/codemirror.css">
+        <script type="text/javascript" src="codemirror/mode/verilog/verilog.js"></script>
+        <script type="text/javascript" src="codemirror/theme/eclipse.css"></script>
 
-            <script type="text/javascript" src="lib/assemblyError.js"></script>
-            <script type="text/javascript" src="lib/assemblyParser.js"></script>
-            <script type="text/javascript" src="lib/assemblyEditor.js"></script>
+        <script type="text/javascript" src="lib/assemblyError.js"></script>
+        <script type="text/javascript" src="lib/assemblyParser.js"></script>
+        <script type="text/javascript" src="lib/jq-assemblyEditor.js"></script>
+
+        <script type="text/javascript" src="lib/pipelineTable.js"></script>
+        <script type="text/javascript" src="lib/jq-pipeline.js"></script>
 
     </head>
 
@@ -21,11 +26,16 @@
     </style>
 
     <body>
-            <textarea id="assembly-editor"></textarea>
-            <br>
-            <button id="pipeline-instructions-button">Pipeline instructions</button>
-            <br>
-            <textarea id="code-feedback" disabled="true" style="border: none; overflow: auto; resize: none" rows="10" cols="60"></textarea>
+        <textarea id="assembly-editor"></textarea>
+        <br>
+        <button id="pipeline-instructions-button">Pipeline instructions</button>
+        <br>
+        <textarea id="code-feedback" disabled="true" style="border: none; overflow: auto; resize: none" rows="10" cols="60"></textarea>
+        <br>
+
+<!--        <table id="table" class="table">-->
+
+<!--        </table>-->
 
     </body>
 </html>

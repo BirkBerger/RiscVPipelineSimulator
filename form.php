@@ -14,7 +14,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['assembly-editor'])) {
         <link rel="stylesheet" href="codemirror-5.57.0/lib/codemirror.css">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
         <script type="text/javascript" src="codemirror-5.57.0/lib/codemirror.js"></script>
-        <script type="text/javascript" src="js/assemblyEditor.js"></script>
+        <script type="text/javascript" src="js/jq-assemblyEditor.js"></script>
         <script type="text/javascript" src="codemirror-5.57.0/mode/verilog/verilog.js"></script>
     </head>
 
