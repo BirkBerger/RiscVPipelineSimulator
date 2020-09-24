@@ -37,10 +37,7 @@
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
         <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 
-<!--        <link rel="stylesheet" href="/path/to/bootstrap.min.css">-->
-<!--        <script src="/path/to/jquery.min.js"></script>-->
-<!--        <script src="/path/to/bootstrap.min.js"></script>-->
-        <script src="node_modules/bootstrap-checkbox/js/bootstrap-checkbox.js"></script>
+<!--        <script src="node_modules/bootstrap-checkbox/js/bootstrap-checkbox.js"></script>-->
 
     </head>
 
@@ -67,11 +64,13 @@
             <div class="table-wrapper"></div>
         </div>
 
-        <div class="mode-slider">
+        <div class="hazard-tools-container">
 
-            <div class="btn-group">
-                <button class="button">Teach me how to solve my hazards</button>
-                <button class="button">Solve my hazards for me</button>
+            <textarea id="hazard-feedback" disabled="true" rows="1" ></textarea>
+
+            <div class="mode-buttons-wrapper">
+                <button class="button" id="teach-me-button">Teach me how to solve my hazards</button>
+                <button class="button" id="solve-hazards-button">Solve my hazards for me</button>
             </div>
 
         </div>

@@ -56,13 +56,17 @@ table.display tbody :hover {
     /*!*table-layout: fixed;*!*/
 }
 
-.mode-slider {
-    display: none;
-    padding-left: 40.15%;
-    padding-top: 20%;
+.hazard-tools-container {
+    /*padding-left: 23%;*/
+    /*padding-top: 20%;*/
+    /*padding-top: 23%;*/
+    width: 800px;
+    height: 40px;
+    float: left;
+    /*display: none;*/
 }
 
-.btn-group .button {
+.mode-buttons-wrapper .button {
     background-color: white; /* Green */
     border: 1px solid grey;
     color: black;
@@ -76,5 +80,16 @@ table.display tbody :hover {
     float: left;
 }
 
+.mode-buttons-wrapper {
+    float: left;
+    padding-left: 5%;
+    display: none;
+}
+
+#hazard-feedback {
+    float: left;
+    width: 200px;
+    resize: none;
+}
 
 
