@@ -3,28 +3,44 @@
     <head>
         <title>Pipeline simulator</title>
 
+<!--        jQuery-->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 
-        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+<!--        my js files related to assembly editor-->
         <script type="text/javascript" src="lib/assemblyError.js"></script>
         <script type="text/javascript" src="lib/assemblyParser.js"></script>
         <script type="text/javascript" src="lib/assemblyCompiler.js"></script>
-        <script type="text/javascript" src="lib/jq-assemblyEditor.js"></script>
 
+<!--        my js files related to pipeline table-->
         <script type="text/javascript" src="lib/pipelineTable.js"></script>
+        <script type="text/javascript" src="lib/hazardSolver.js"></script>
+
+<!--        my js files with jQuery code-->
+        <script type="text/javascript" src="lib/jq-assemblyEditor.js"></script>
+        <script type="text/javascript" src="lib/jq-hazardSolving.js"></script>
         <script type="text/javascript" src="lib/jq-pipeline.js"></script>
 
+<!--        my css file -->
         <link rel="stylesheet" href="base.css">
 
+<!--        Bootstrap-->
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!--        Codemirror-->
         <script type="text/javascript" src="codemirror/lib/codemirror.js"></script>
         <link rel="stylesheet" href="codemirror/lib/codemirror.css">
         <script type="text/javascript" src="codemirror/mode/verilog/verilog.js"></script>
         <script type="text/javascript" src="codemirror/theme/eclipse.css"></script>
 
+<!--        DataTables-->
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
         <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+
+<!--        <link rel="stylesheet" href="/path/to/bootstrap.min.css">-->
+<!--        <script src="/path/to/jquery.min.js"></script>-->
+<!--        <script src="/path/to/bootstrap.min.js"></script>-->
+        <script src="node_modules/bootstrap-checkbox/js/bootstrap-checkbox.js"></script>
 
     </head>
 
@@ -36,16 +52,32 @@
         <div class="editor-wrapper">
 
             <textarea id="assembly-editor"></textarea>
-            <br>
-            <button id="pipeline-instructions-button">Pipeline instructions</button>
-            <br>
-            <textarea id="code-feedback" disabled="true" style="border: none; overflow: auto; resize: none" rows="10" cols="60"></textarea>
-            <br>
+
+            <div class="pipeline-button-wrapper">
+                <button id="pipeline-instructions-button">Pipeline instructions</button>
+            </div>
+
+            <div class="code-feedback-wrapper">
+                <textarea id="code-feedback" disabled="true" rows="10" cols="60"></textarea>
+            </div>
+
+        </div>
+
+        <div class="table-container">
+            <div class="table-wrapper"></div>
+        </div>
+
+        <div class="mode-slider">
+
+            <div class="btn-group">
+                <button class="button">Teach me how to solve my hazards</button>
+                <button class="button">Solve my hazards for me</button>
+            </div>
 
         </div>
 
 
-        <div class="table-container"> <div class="table-wrapper"></div> </div>
+
 
 
     </body>

@@ -1,21 +1,37 @@
 .editor-wrapper {
     float:left;
-    width:250px;
-    height:500px;
+    width:300px;
+    height:540px;
+    padding-left: 2%;
     padding-right: 5%;
     padding-top: 10%;
+}
+
+.pipeline-button-wrapper{
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+.code-feedback-wrapper {
+    padding-bottom: 10%;
+}
+
+#code-feedback {
+    overflow: auto;
+    resize: none
 }
 
 th, td { white-space: nowrap; }
 
 .table-container {
     padding-top: 10%;
-    padding-bottom: 10%
+    padding-bottom: 10%;
+    padding-left: 23%;
 }
 
 .table-wrapper {
-    border: 1px solid #333333;
-    width: 1000px;
+    /*border: 1px solid #333333;*/
+    width: 800px;
     height: 400px;
     overflow: scroll;
     float:left;
@@ -32,14 +48,32 @@ table.display tbody :hover {
     background-color: #6A9FB5 !important;
 }
 
-
 #pipeline-table {
-
     text-align:center;
     /*border: 1px solid #333333;*/
     /*!*width: 100% !important;*!*/
     /*overflow: hidden;*/
     /*!*table-layout: fixed;*!*/
+}
+
+.mode-slider {
+    display: none;
+    padding-left: 40.15%;
+    padding-top: 20%;
+}
+
+.btn-group .button {
+    background-color: white; /* Green */
+    border: 1px solid grey;
+    color: black;
+    /*padding: 15px 32px;*/
+    width: 280px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    float: left;
 }
 
 
