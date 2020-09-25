@@ -1,0 +1,13 @@
+addi x3, x0, -1
+and x2, x3, x13
+sltiu x7, x3, 5
+mulh x2, x10, x3
+remu x20, x3, x3
+ld x9, 0(x15)
+add x17, x8, x9
+sub x2, x9, x8
+sll x14, x9, x9
+xor x1, x22, x9
+auipc x8, 82347
+addi x3, x0, -1
+addi x3, x0, 999

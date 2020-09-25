@@ -1,5 +1,5 @@
 Feature: Assembly parser
-  Description: input different assembly snippets and check output
+  Description: input different assembly snippets and check that errors are being reported properly
 
   # fail
   Scenario: Too many instruction fields

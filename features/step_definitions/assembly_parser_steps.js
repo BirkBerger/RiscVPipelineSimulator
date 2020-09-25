@@ -10,9 +10,9 @@ let errorMessageHolder;
 
 
 Given("that the assembly editor holds the content of {string}", function (textFileName) {
-    let code = fs.readFileSync("features/test_files/" + textFileName).toString();
-    let assemblyParser = new AssemblyParser();
-    let errorMessage = assemblyParser.getAllInstructionErrors(code);
+    let code = fs.readFileSync("features/test_files_assembly_editor/" + textFileName).toString();
+    let assemblyParser = new AssemblyParser(code);
+    let errorMessage = assemblyParser.getAllInstructionErrors();
     errorMessageHolder = new ErrorMessageHolder(errorMessage);
 });
 
