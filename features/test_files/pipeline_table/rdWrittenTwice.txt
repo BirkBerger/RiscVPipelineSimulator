@@ -1,0 +1,5 @@
+sub x9, x8, x1
+add x4, x8, x2
+addi x4, x4, 3
+xor x19, x4, x4
+sw x2, 0(x8)

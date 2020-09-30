@@ -1,0 +1,8 @@
+cannon:
+addi x11, x3, x4
+sd x11, 0(x14)
+add x3, x13, x7
+lexi:
+sub x1, x4, x5
+lh x8, 3(x30)
+sh x8, 555(x10)
