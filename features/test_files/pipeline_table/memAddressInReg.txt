@@ -1,0 +1,8 @@
+addi x11, x3, 4
+ld x11, 99(x11)
+sd x31, 0(x11)
+lexi:
+sub x1, x4, x5
+lh x8, 3(x1)
+sh x8, 555(x1)
+addi x4, x8, 5
