@@ -1,5 +1,5 @@
 cannon:
-addi x11, x3, x4
+addi x11, x3, 4
 sd x11, 0(x14)
 add x3, x13, x7
 lexi:

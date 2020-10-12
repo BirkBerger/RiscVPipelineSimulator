@@ -21,6 +21,7 @@
     table-layout: fixed;
     text-align: center;
     position: absolute;
+    border: none;
 }
 
 #forwarding-lines {

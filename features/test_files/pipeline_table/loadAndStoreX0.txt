@@ -5,10 +5,11 @@ addi x0, x0, 1
 x9:
 addi x1, x0, 2
 beq x0, x11, x1
-addi x2, x0, x0
+addi x2, x0, 0
 lw x0, 0(x0)
 add x0, x0, x0
 sw x0, 0(x0)
+x1:
 addi x1, x0, 2
 beq x0, x11, x1
-addi x2, x0, x0
+addi x2, x0, 0
