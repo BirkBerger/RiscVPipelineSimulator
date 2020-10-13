@@ -85,16 +85,16 @@ Feature: Assembly parser
 
       """
 
-  # fail
-  Scenario: sc.d memory address not reserved
-    Given that the assembly editor holds the content of "memAddressNotReserved.txt"
-    Then the error message is thrown
-      """
-      Error in...
-      line 3:
-      - memory address has not been reserved
-
-      """
+#  # fail
+#  Scenario: sc.d memory address not reserved
+#    Given that the assembly editor holds the content of "memAddressNotReserved.txt"
+#    Then the error message is thrown
+#      """
+#      Error in...
+#      line 3:
+#      - memory address has not been reserved
+#
+#      """
 
   # fail
   Scenario: Invalid immediate value

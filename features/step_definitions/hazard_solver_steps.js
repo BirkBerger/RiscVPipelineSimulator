@@ -2,35 +2,35 @@ const {After, Before, Given, When, Then } = require('cucumber');
 const assert = require('assert');
 const fs = require('fs')
 const HazardSolver = require("../../lib/hazardSolver");
-const AssemblyCompiler = require("../../lib/assemblyCleaner");
 const HazardSolverHolder = require("../../lib/holders/hazardSolverHolder");
-const CompilerHolder = require("../../lib/holders/compilerHolder");
+const CleanerHolder = require("../../lib/holders/cleanerHolder");
 const CodeHolder = require("../../lib/holders/codeHolder");
 const AssemblyParser = require("../../lib/assemblyParser");
 const ParserHolder = require("../../lib/parserHolder");
+const AssemblyCleaner = require("../../lib/assemblyCleaner");
 
 let codeHolder;
 let parserHolder;
-let compilerHolder;
+let cleanerHolder;
 let hazardSolverHolder;
 
 
 Given("that the assembly editor holds the input with no errors: {string}", function (textFileName) {
-    let code = fs.readFileSync("features/test_files/pipeline_table/" + textFileName).toString();
+    let code = fs.readFileSync("features/test_files/hazards/" + textFileName).toString();
     codeHolder = new CodeHolder(code);
     let parser = new AssemblyParser(code);
     parser.getAllInstructionErrors();
     parserHolder = new ParserHolder(parser);
 });
 
-Given('the assembly code is compiled', function () {
-    let compiler = new AssemblyCompiler();
-    compiler.storeCode(codeHolder.getCode(), parserHolder.getParser().instructionSignals);
-    compilerHolder = new CompilerHolder(compiler);
+Given('the assembly code is cleaned', function () {
+    let cleaner = new AssemblyCleaner();
+    cleaner.cleanAssemblyCode(codeHolder.getCode(), parserHolder.getParser().instructionSignals);
+    cleanerHolder = new CleanerHolder(cleaner);
 });
 
 Given('the data hazards are removed from the assembly code', function () {
-    let hazardSolver = new HazardSolver(compilerHolder.getCompiler().cleanAssemblyCode);
+    let hazardSolver = new HazardSolver(cleanerHolder.getCleaner().cleanCode);
     hazardSolver.detectAllHazards();
     hazardSolver.solveAllHazards();
     hazardSolverHolder = new HazardSolverHolder(hazardSolver);
