@@ -1,0 +1,13 @@
+addi x2, x0, 2
+addi x9, x0, 9
+sb x9, 0(x9)
+lb x2, 0(x9)
+add x5, x2, x2
+addi x22, x0, -4
+sub x20, x2, x22
+lb x4, 0(x9)
+add x7, x4, x22
+sub x13, x4, x5
+lb x11, 0(x9)
+lb x10, 0(x9)
+sub x20, x10, x22
