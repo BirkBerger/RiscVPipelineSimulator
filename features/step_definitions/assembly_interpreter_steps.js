@@ -26,7 +26,7 @@ Given('the code is cleaned', function () {
     let cleaner = new AssemblyCleaner();
     cleaner.cleanAssemblyCode(codeHolder.getCode(), parserHolder.getParser().instructionSignals);
     cleanerHolder = new CleanerHolder(cleaner);
-    console.log(cleaner.cleanCode);
+    // console.log(cleaner.cleanCode);
 });
 
 Given('the code is interpreted', function () {
@@ -35,14 +35,11 @@ Given('the code is interpreted', function () {
     interpreterHolder = new InterpreterHolder(interpreter);
 });
 
-Then('the result of register {string} is {int}', function (regName, regValue) {
+Then('the result of register {string} is {string}', function (regName, expectedRegValue) {
     let registersByTime = interpreterHolder.getInterpreter().gpRegistersByTime;
     let endCC = Object.keys(registersByTime).length - 1;
-    // console.log(interpreterHolder.getInterpreter().pipelineOrder);
     let regNumber = regName.substring(1,regName.length);
-    // console.log("all reg: " + registersByTime);
-    // console.log("final reg: " + registersByTime[endCC]);
-    assert.equal(registersByTime[endCC][regNumber], BigInt(regValue));
+    assert.equal(registersByTime[endCC][regNumber], expectedRegValue);
 });
 
 Then('the value at memory address {int} is {int}', function (memAddress, memValue) {

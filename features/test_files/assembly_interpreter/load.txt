@@ -1,0 +1,15 @@
+addi x9, x0, 8
+addi x1, x0, 2047
+sh x1, 0(x9)
+sh x1, 2(x9)
+sh x1, 4(x9)
+sh x1, 6(x9)
+sh x1, 8(x9)
+sh x1, 10(x9)
+ld x2, 0(x9)
+lw x3, 0(x9)
+lwu x4, 0(x9)
+lh x5, 0(x9)
+lhu x6, 0(x9)
+lb x7, 0(x9)
+lbu x8, 0(x9)
