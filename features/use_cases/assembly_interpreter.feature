@@ -1,19 +1,19 @@
 Feature: Assembly interpreter
   Description: input different assembly snippets with no syntax error and check that the program is being interpreted correctly
 
-#  # data hazard
-#  Scenario: Program 1:
-#    Given that the assembly editor holds the input with no syntax errors: "program1.txt"
-#    And the code is cleaned
-#    And the code is interpreted
-#    Then the result of register "x2" is "9"
-#    And the result of register "x3" is "0"
-#    And the result of register "x5" is "18"
-#    And the result of register "x11" is "9"
-#    And the result of register "x13" is "-9"
-#    And the result of register "x20" is "13"
-#    And the result of register "x22" is "-4"
-#    And the value at memory address 9 is "9"
+  # data hazard
+  Scenario: Program 1:
+    Given that the assembly editor holds the input with no syntax errors: "program1.txt"
+    And the code is cleaned
+    And the code is interpreted
+    Then the result of register "x2" is "9"
+    And the result of register "x3" is "0"
+    And the result of register "x5" is "18"
+    And the result of register "x11" is "9"
+    And the result of register "x13" is "-9"
+    And the result of register "x20" is "13"
+    And the result of register "x22" is "-4"
+    And the value at memory address 9 is 9
 
   Scenario: Load
     Given that the assembly editor holds the input with no syntax errors: "load.txt"
@@ -42,6 +42,9 @@ Feature: Assembly interpreter
     And the value at memory address 19 is 7
 
   Scenario: Store
+    Given that the assembly editor holds the input with no syntax errors: "store.txt"
+    And the code is cleaned
+    And the code is interpreted
 
   Scenario: Arithmetic
 
