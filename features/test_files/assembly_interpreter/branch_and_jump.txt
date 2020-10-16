@@ -1,0 +1,34 @@
+addi x30, x0, 9
+addi x31, x0, -9
+beq x30, x30, setx3
+addi x1, x0, 8
+addi x2, x0, 8
+addi x3, x0, 8
+addi x4, x0, 8
+addi x5, x0, 8
+setx1:
+addi x1, x0, 1
+bltu x30, x31, setx4
+setx2:
+addi x2, x0, 1
+blt x31, x30, -5
+setx3:
+addi x3, x0, 1
+bne x30, x0, setx2
+setx4:
+addi x4, x0, 1
+bge x30, x31, 8
+setx5:
+addi x5, x0, 1
+setx6:
+addi x6, x0, 1
+addi x10, x0, 6
+sd x10, 33(x9)
+jalr x8, 33(x9)
+setx7:
+addi x7, x0, 1
+bgeu x31, x30, setx6
+jumpToEnd:
+jal x9, end
+jal x9, jumpToEnd
+end:

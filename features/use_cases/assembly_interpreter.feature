@@ -121,11 +121,15 @@ Feature: Assembly interpreter
     Then the result of register "x14" is "-10466742236329"
     Then the result of register "x15" is "93064023"
 
-
-
-
-
   Scenario: Branch and jump
+    Given that the assembly editor holds the input with no syntax errors: "branch_and_jump.txt"
+    And the code is cleaned
+    And the code is interpreted
+    Then the result of register "x0" is "0"
+#    And the result of register "x" is ""
+    And the pipelineOrder is "0,1,2,14,15,16,11,12,13,8,9,10,17,18,19,27,28,29,22,23,24,25,26,32,30,31,33"
+
+
 
   Scenario: Program 1: Mixed instructions
     Given that the assembly editor holds the input with no syntax errors: "program1.txt"
