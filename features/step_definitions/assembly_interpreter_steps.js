@@ -8,6 +8,7 @@ const AssemblyCleaner = require("../../lib/assemblyCleaner");
 const CleanerHolder = require("../../lib/holders/cleanerHolder");
 const AssemblyInterpreter = require("../../lib/assemblyInterpreter");
 const InterpreterHolder = require("../../lib/holders/interpreterHolder");
+const InfiniteLoopException = require("../../lib/exceptions/InfiniteLoopException");
 
 let codeHolder;
 let parserHolder;
@@ -35,7 +36,11 @@ Given('the code is interpreted', function () {
     try {
         interpreter.interpretCleanAssemblyCode(cleanerHolder.getCleaner().cleanCode);
     }  catch(e) {
-        console.log(e.message);
+        if (e.name === "InfiniteLoopException") {
+            console.log(e.message);
+        } else {
+            throw e
+        }
     }
     interpreterHolder = new InterpreterHolder(interpreter);
 });
