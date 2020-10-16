@@ -23,12 +23,14 @@ addi x5, x0, 1
 setx6:
 addi x6, x0, 1
 addi x10, x0, 6
-sd x10, 33(x9)
-jalr x8, 33(x9)
+addi x9, x0, 6
+jalr x8, 26(x9)
 setx7:
 addi x7, x0, 1
 bgeu x31, x30, setx6
 jumpToEnd:
-jal x9, end
+jal x9, auipc
 jal x9, jumpToEnd
+auipc:
+auipc x11, 8345
 end:
