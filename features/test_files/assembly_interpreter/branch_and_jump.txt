@@ -11,7 +11,7 @@ addi x1, x0, 1
 bltu x30, x31, setx4
 setx2:
 addi x2, x0, 1
-blt x31, x30, -5
+blt x31, x30, setx1
 setx3:
 addi x3, x0, 1
 bne x30, x0, setx2
