@@ -31,8 +31,7 @@ Given('the code is cleaned', function () {
 });
 
 Given('the code is interpreted', function () {
-    let interpreter = new AssemblyInterpreter();
-    interpreter.setLabelsByLineNumber(parserHolder.getParser().labelsByLineNumber);
+    let interpreter = new AssemblyInterpreter(parserHolder.getParser().labelsByLineNumber);
     try {
         interpreter.interpretCleanAssemblyCode(cleanerHolder.getCleaner().cleanCode);
     }  catch(e) {

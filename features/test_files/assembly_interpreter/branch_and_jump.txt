@@ -33,4 +33,5 @@ jal x9, auipc
 jal x9, jumpToEnd
 auipc:
 auipc x11, 8345
+lui x12, 8345
 end:

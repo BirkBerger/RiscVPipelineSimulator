@@ -1,7 +1,6 @@
 Feature: Assembly interpreter
   Description: input different assembly snippets with no syntax error and check that the program is being interpreted correctly
 
-
   Scenario: Load double, word, half, and byte - signed/unsigned
     Given that the assembly editor holds the input with no syntax errors: "load.txt"
     And the code is cleaned
@@ -137,11 +136,10 @@ Feature: Assembly interpreter
     And the result of register "x9" is "32"
     And the result of register "x10" is "6"
     And the result of register "x11" is "34181154"
+    And the result of register "x12" is "34181120"
     And the result of register "x30" is "9"
     And the result of register "x31" is "-9"
-    And the pipelineOrder is "0,1,2,14,15,16,11,12,13,8,9,10,17,18,19,27,28,29,22,23,24,25,26,32,30,31,33,34,35"
-
-
+    And the pipelineOrder is "0,1,2,14,15,16,11,12,13,8,9,10,17,18,19,27,28,29,22,23,24,25,26,32,30,31,33,34,35,36"
 
   Scenario: Program 1: Mixed instructions
     Given that the assembly editor holds the input with no syntax errors: "program1.txt"
@@ -156,5 +154,3 @@ Feature: Assembly interpreter
     And the result of register "x20" is "13"
     And the result of register "x22" is "-4"
     And the value at memory address 9 is 9
-
-#    overflow

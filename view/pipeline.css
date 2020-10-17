@@ -16,6 +16,7 @@
 }
 
 #pipeline-table {
+    font-family: Palatino, 'Palatino Linotype', serif;
     border-collapse: separate;
     border-spacing:0 8px;
     table-layout: fixed;
@@ -28,32 +29,35 @@
     position: relative;
 }
 
-table.display tbody :hover {
-    background-color: #6A9FB5 !important;
-    opacity: 0.7;
-}
-
+/* Header */
 #pipeline-table thead th {
+    font-size: 13px;
+    font-weight: bold;
     background-color: white;
     position: -webkit-sticky;
     position: sticky;
     z-index: 1;
     top: 0;
+    line-height: 40px;
+    padding: 0px;
 }
 
 #pipeline-table tr {
-    line-height: 19px;
+    font-size: 11px;
+    line-height: 5px;
+    padding: 0px;
+    margin: 0px;
+    border-spacing: 0px;
 }
 
 /* Clock cycle columns */
 #pipeline-table tr th:nth-child(odd){
-    /*white-space: nowrap;*/
-    width: 60px;
+    width: 66px;
 }
 
 /* In-between clock cycle columns */
 #pipeline-table tr th:nth-child(even){
-    width: 30px;
+    width: 20px;
     padding: 0px;
     margin: 0px;
     border-spacing: 0px;
@@ -62,6 +66,9 @@ table.display tbody :hover {
 /* Pipeline stage cells */
 .stage-cell {
     border: 1px solid #5c6773;
+    padding: 0px;
+    margin: 0px;
+    border-spacing: 0px;
 }
 
 /* Stall cells */
