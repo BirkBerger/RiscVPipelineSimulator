@@ -1,0 +1,81 @@
+* {
+    /*margin: 0;*/
+    /*padding-top: 0;*/
+}
+
+
+.editor-container {
+    grid-area: editor-container;
+}
+
+.pipeline-button-container {
+    grid-area: pipeline-button-container;
+}
+
+.code-feedback-container {
+    grid-area: code-feedback-container;
+}
+
+.pipeline-container {
+    grid-area: pipeline-container;
+}
+
+.hazard-feedback-container {
+    grid-area: hazard-feedback-container;
+}
+
+.show-hazards-button-container {
+    grid-area: show-hazards-button-container;
+    background-color: #4D344A;
+}
+
+.data-hazard-button-container {
+    grid-area: data-hazard-button-container;
+    background-color: #00d95a;
+}
+
+.control-hazard-button-container {
+    grid-area: control-hazard-button-container;
+    background-color: #7cb8bb;
+}
+
+.register-memory-container {
+    grid-area: register-memory-container;
+    background-color: #1d75b3;
+}
+
+.editor-title-container {
+    grid-area: editor-title-container;
+    background-color: #4d4d4d;
+}
+
+.pipeline-title-container {
+    grid-area: pipeline-title-container;
+    background-color: #9c3328;
+}
+
+[class*=-button] {
+    justify-self: center;
+}
+
+[class*="-container"] {
+    /*justify-self: center;*/
+    /*align-self: center;*/
+    /*padding: 2%;*/
+    /*display:flex;*/
+    /*align-items:center;*/
+}
+
+.grid {
+    margin: 2%;
+    grid-gap: 10px;
+    display: grid;
+    grid-template-columns: 20% 15% 5% 15% 5% 15% 20%;
+    grid-template-rows: 10% 450px 10% 10% 20%;
+    grid-template-areas:
+    "editor-title-container pipeline-title-container pipeline-title-container pipeline-title-container pipeline-title-container pipeline-title-container ."
+    "editor-container pipeline-container pipeline-container pipeline-container pipeline-container pipeline-container register-memory-container"
+    "editor-container hazard-feedback-container hazard-feedback-container hazard-feedback-container hazard-feedback-container hazard-feedback-container ."
+    "pipeline-button-container show-hazards-button-container show-hazards-button-container data-hazard-button-container control-hazard-button-container control-hazard-button-container ."
+    "code-feedback-container . . . . . ."
+}

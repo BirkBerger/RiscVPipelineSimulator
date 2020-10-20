@@ -8,7 +8,7 @@ const AssemblyCleaner = require("../../lib/assemblyCleaner");
 const CleanerHolder = require("../../lib/holders/cleanerHolder");
 const AssemblyInterpreter = require("../../lib/assemblyInterpreter");
 const InterpreterHolder = require("../../lib/holders/interpreterHolder");
-const InfiniteLoopException = require("../../lib/exceptions/InfiniteLoopException");
+const InfiniteLoopException = require("../../lib/exceptions/infiniteLoopException");
 
 let codeHolder;
 let parserHolder;

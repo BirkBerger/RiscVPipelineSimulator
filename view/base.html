@@ -11,20 +11,25 @@
         <script type="text/javascript" src="../lib/assemblyParser.js"></script>
         <script type="text/javascript" src="../lib/assemblyCleaner.js"></script>
         <script type="text/javascript" src="../lib/assemblyInterpreter.js"></script>
+        <script type="text/javascript" src="../lib/exceptions/infiniteLoopException.js"></script>
 
 <!--        my js files related to pipeline table-->
-        <script type="text/javascript" src="../lib/dataHazardSolver.js"></script>
+        <script type="text/javascript" src="../lib/controlHazardHandler.js"></script>
+        <script type="text/javascript" src="../lib/dataHazardHandler.js"></script>
+        <script type="text/javascript" src="../lib/hazardDetector.js"></script>
         <script type="text/javascript" src="../lib/hazardSolver.js"></script>
         <script type="text/javascript" src="../lib/pipelineTable.js"></script>
 
 <!--        my js files with jQuery code-->
         <script type="text/javascript" src="../lib/jq-assemblyEditor.js"></script>
-        <script type="text/javascript" src="../lib/jq-hazardSolving.js"></script>
         <script type="text/javascript" src="../lib/jq-pipeline.js"></script>
+        <script type="text/javascript" src="../lib/jq-hazardButtons.js"></script>
 
 <!--        my css files -->
+        <link rel="stylesheet" href="base.css">
         <link rel="stylesheet" href="editor.css">
         <link rel="stylesheet" href="pipeline.css">
+        <link rel="stylesheet" href="buttons.css">
         <script src="../jquery.line.js"></script>
 
 <!--        Bootstrap-->
@@ -48,39 +53,56 @@
     </style>
 
     <body>
-        <div class="editor-wrapper">
 
-            <textarea id="assembly-editor"></textarea>
+        <div class="grid">
 
-            <div class="pipeline-button-wrapper">
+            <div class="editor-container">
+                <div class="editor-wrapper">
+                    <textarea id="editor-textarea"></textarea>
+                </div>
+            </div>
+
+            <div class="pipeline-button-container">
                 <button id="pipeline-instructions-button">Pipeline instructions</button>
             </div>
 
-            <div class="code-feedback-wrapper">
-                <textarea id="code-feedback" disabled="true" rows="10" cols="60" ></textarea>
+            <div class="code-feedback-container">
+                <textarea id="code-feedback" disabled="true"></textarea>
+
+            </div>
+
+            <div class="pipeline-container">
+                <div class="table-container">
+                    <div class="table-wrapper"></div>
+                </div>
+            </div>
+
+            <div class="hazard-feedback-container">
+                <textarea id="hazard-feedback" disabled="true"></textarea>
+            </div>
+
+            <div class="show-hazards-button-container">
+                <button class="button" id="show-hazards-button">Show hazards</button>
+            </div>
+
+            <div class="data-hazard-button-container">
+                <button class="button" id="solve-data-hazards">Solve data hazards</button>
+            </div>
+
+            <div class="control-hazard-button-container">
+                <button class="button" id="solve-control-hazards">Solve control hazards</button>
+            </div>
+
+            <div class="register-memory-container">
+            </div>
+
+            <div class="editor-title-container">
+            </div>
+
+            <div class="pipeline-title-container">
             </div>
 
         </div>
-
-        <div class="table-container">
-
-            <div class="table-wrapper"></div></div>
-
-        <div class="hazard-tools-container">
-
-            <textarea id="hazard-feedback" disabled="true" rows="1" ></textarea>
-
-            <div class="mode-buttons-wrapper">
-                <button class="button" id="teach-me-button">Teach me how to solve my hazards</button>
-                <button class="button" id="solve-hazards-button">Solve my hazards for me</button>
-            </div>
-
-        </div>
-
-
-
-
-
 
     </body>
 </html>

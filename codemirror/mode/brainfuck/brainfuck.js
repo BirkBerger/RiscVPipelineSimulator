@@ -5,9 +5,9 @@
 
 (function(mod) {
   if (typeof exports == "object" && typeof module == "object")
-    mod(require("../.."))
+    mod(require("../../lib/codemirror"))
   else if (typeof define == "function" && define.amd)
-    define(["../.."], mod)
+    define(["../../lib/codemirror"], mod)
   else
     mod(CodeMirror)
 })(function(CodeMirror) {
