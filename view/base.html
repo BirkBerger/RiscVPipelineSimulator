@@ -23,7 +23,7 @@
 <!--        my js files with jQuery code-->
         <script type="text/javascript" src="../lib/jq-assemblyEditor.js"></script>
         <script type="text/javascript" src="../lib/jq-pipeline.js"></script>
-        <script type="text/javascript" src="../lib/jq-hazardButtons.js"></script>
+        <script type="text/javascript" src="../lib/jq-hazardSwitches.js"></script>
 
 <!--        my css files -->
         <link rel="stylesheet" href="base.css">
@@ -86,12 +86,37 @@
             </div>
 
             <div class="data-hazard-button-container">
-                <button class="button" id="solve-data-hazards">Solve data hazards</button>
+                <form method="post" action="/Tests/Post/">
+                    <fieldset>
+                        <input type="checkbox" id="solve-data-hazards" onclick="checkBoxClicked()">Solve data hazards<br>
+                        <input type="checkbox" id="solve-control-hazards" onclick="checkBoxClicked()">Solve control hazards<br>
+                    </fieldset>
+                </form>
             </div>
 
-            <div class="control-hazard-button-container">
-                <button class="button" id="solve-control-hazards">Solve control hazards</button>
-            </div>
+<!--            <div class="data-hazard-button-container">-->
+<!--                <label class="solve-data-hazards">-->
+<!--                    <input class="switch-input" type="checkbox" />-->
+<!--                    <span class="switch-label" data-on="Data hazards solved" data-off="Solve data hazards"></span>-->
+<!--                    <span class="switch-handle"></span>-->
+<!--                </label>-->
+<!--            </div>-->
+
+<!--            <div class="control-hazard-button-container">-->
+<!--                <label class="solve-control-hazards">-->
+<!--                    <input class="switch-input" type="checkbox" />-->
+<!--                    <span class="switch-label" data-on="Control hazards solved" data-off="Solve control hazards"></span>-->
+<!--                    <span class="switch-handle"></span>-->
+<!--                </label>-->
+<!--            </div>-->
+
+<!--            <div class="data-hazard-button-container">-->
+<!--                <button class="button" id="solve-data-hazards">Solve data hazards</button>-->
+<!--            </div>-->
+
+<!--            <div class="control-hazard-button-container">-->
+<!--                <button class="button" id="solve-control-hazards">Solve control hazards</button>-->
+<!--            </div>-->
 
             <div class="register-memory-container">
             </div>

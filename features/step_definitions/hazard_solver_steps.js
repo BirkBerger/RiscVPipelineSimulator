@@ -6,7 +6,7 @@ const HazardSolverHolder = require("../../lib/holders/hazardSolverHolder");
 const CleanerHolder = require("../../lib/holders/cleanerHolder");
 const CodeHolder = require("../../lib/holders/codeHolder");
 const AssemblyParser = require("../../lib/assemblyParser");
-const ParserHolder = require("../../lib/parserHolder");
+const ParserHolder = require("../../lib/holders/parserHolder");
 const AssemblyCleaner = require("../../lib/assemblyCleaner");
 
 let codeHolder;
