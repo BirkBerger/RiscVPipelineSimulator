@@ -16,7 +16,7 @@ let hazardSolverHolder;
 
 
 Given("that the assembly editor holds the input with no errors: {string}", function (textFileName) {
-    let code = fs.readFileSync("features/test_files/hazards/" + textFileName).toString();
+    let code = fs.readFileSync("features/test_files/data_hazards/" + textFileName).toString();
     codeHolder = new CodeHolder(code);
     let parser = new AssemblyParser(code);
     parser.getAllInstructionErrors();
@@ -29,7 +29,7 @@ Given('the assembly code is cleaned', function () {
     cleanerHolder = new CleanerHolder(cleaner);
 });
 
-Given('the data hazards are removed from the assembly code', function () {
+Given('the data data_hazards are removed from the assembly code', function () {
     let hazardSolver = new HazardSolver(cleanerHolder.getCleaner().cleanCode);
     hazardSolver.detectAllHazards();
     hazardSolver.solveAllHazards();
@@ -37,7 +37,7 @@ Given('the data hazards are removed from the assembly code', function () {
 });
 
 
-Then('{int} data hazards are detected', function (expectedAmount) {
+Then('{int} data data_hazards are detected', function (expectedAmount) {
     // console.log(hazardSolverHolder.getHazardSolver().hazardFreeCode);
     assert.equal(hazardSolverHolder.getHazardSolver().numberOfHazards, expectedAmount);
 });

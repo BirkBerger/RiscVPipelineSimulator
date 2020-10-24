@@ -1,14 +1,24 @@
-.table-wrapper {
+.table-container {
     width: 780px;
     height: 450px;
     overflow: scroll;
-    /*float:left;*/
-    /*height: 450px;*/
     border: 1px solid #5c6773;
     display: inline-block;
     position: absolute;
     z-index: 0;
 }
+
+.table-wrapper {
+    position: absolute;
+    table-layout: fixed;
+}
+
+/*tbody {*/
+/*    !*width: 468px;*!*/
+/*    !*height: 81px;*!*/
+/*    position: absolute;*/
+/*    table-layout: fixed;*/
+/*}*/
 
 #pipeline-table {
     font-family: Palatino, 'Palatino Linotype', serif;
@@ -26,6 +36,7 @@
 
 /* Header */
 #pipeline-table thead th {
+    width: 780px;
     font-size: 13px;
     font-weight: bold;
     background-color: white;
@@ -37,8 +48,9 @@
     padding: 0px;
 }
 
+/* Rows */
 #pipeline-table tr {
-    font-size: 11px;
+    font-size: 9px;
     line-height: 5px;
     padding: 0px;
     margin: 0px;
@@ -47,12 +59,12 @@
 
 /* Clock cycle columns */
 #pipeline-table tr th:nth-child(odd){
-    width: 66px;
+    width:40px;
 }
 
 /* In-between clock cycle columns */
 #pipeline-table tr th:nth-child(even){
-    width: 20px;
+    width: 30px;
     padding: 0px;
     margin: 0px;
     border-spacing: 0px;
@@ -66,10 +78,24 @@
     border-spacing: 0px;
 }
 
-/* Stall cells */
+/* Stall and flush cells */
 #stall-cell {
     padding: 0px;
     margin: 0px;
     border-spacing: 0px;
 }
+
+#flush-cell {
+    padding: 0px;
+    margin: 0px;
+    border-spacing: 0px;
+}
+
+/*img {*/
+/*    padding: 0px;*/
+/*    margin: 0px;*/
+/*    border-spacing: 0px;*/
+/*    !*width: 3px;*!*/
+/*}*/
+
 
