@@ -1,9 +1,9 @@
-lw x2, 0(x11)
-add x5, x2, x2
-sub x20, x2, x22
-lw x4, 0(x11)
-add x5, x4, x4
-sub x20, x4, x22
-lw x10, 0(x11)
-lw x10, 0(x11)
-sub x20, x10, x22
+    lw x2, 0(x11)
+    add x5, x2, x2
+    sub x20, x2, x22
+    lw x4, 0(x11)
+    add x5, x4, x4
+    sub x20, x4, x22
+    lw x10, 0(x11)
+    lw x10, 0(x11)
+    sub x20, x10, x22

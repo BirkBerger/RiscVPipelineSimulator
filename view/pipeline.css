@@ -78,14 +78,17 @@
     border-spacing: 0px;
 }
 
-/* Stall and flush cells */
+/* Stall cells */
 #stall-cell {
+    border: none;
     padding: 0px;
     margin: 0px;
     border-spacing: 0px;
 }
 
+/* Flush cells */
 #flush-cell {
+    border: none;
     padding: 0px;
     margin: 0px;
     border-spacing: 0px;
