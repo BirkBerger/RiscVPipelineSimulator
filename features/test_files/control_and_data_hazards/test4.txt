@@ -1,0 +1,16 @@
+beq x0, x0, goToInitialize
+initialize:
+addi x3, x0, 0
+addi x2, x0, 3
+addi x1, x0, 1
+bne x3, x2, loop
+goToInitialize:
+addi x9, x0, 9
+addi x10, x0, 10
+blt x9, x10, initialize
+loop:
+sub x2, x2, x1
+bne x3, x2, loop
+beq x3, x3, end
+sub x1, x0, x3
+end:

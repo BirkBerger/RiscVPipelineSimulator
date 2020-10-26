@@ -8,3 +8,8 @@ lexi:
 lw x10, 0(x11)
 lw x10, 0(x11)
 sub x20, x10, x22
+beq x0, x0, end
+lw x2, 0(x11)
+add x5, x2, x2
+sub x20, x2, x22
+end:
