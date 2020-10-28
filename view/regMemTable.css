@@ -1,0 +1,46 @@
+.register-memory-container{
+    width: 230px;
+    height: 330px;
+    overflow: scroll;
+    border: 1px solid #5c6773;
+    display: inline-block;
+    z-index: 0;
+}
+
+#register-memory-table {
+    font-family: Palatino, 'Palatino Linotype', serif;
+    border-collapse: collapse;
+}
+
+#register-memory-table td {
+    border: 1px solid #5c6773;
+}
+
+/* Rows */
+#register-memory-table tr {
+    font-size: 13px;
+    line-height: 5px;
+}
+
+#reg-name-cell {
+    width: 30px;
+    text-align: center;
+}
+
+#mem-address-cell {
+    /*width: 30px;*/
+    text-align: center;
+}
+
+#mem-value-cell tr td {
+}
+
+#register-memory-table tr:first-child td {
+    border-top: 0;
+}
+#register-memory-table tr td:first-child {
+    border-left: 0;
+}
+#register-memory-table tr td:last-child {
+    border-right: 0;
+}

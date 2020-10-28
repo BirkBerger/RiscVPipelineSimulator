@@ -1,0 +1,21 @@
+.register-memory-title-container {
+    width: 230px;
+}
+
+[id*="-title"] {
+    font-family: Palatino, 'Palatino Linotype', serif;
+    text-align: center;
+    resize: none;
+}
+
+#register-title {
+    width: 115px;
+    height: 80px;
+    float: left;
+}
+
+#memory-title {
+    width: 115px;
+    height: 80px;
+    float: left;
+}

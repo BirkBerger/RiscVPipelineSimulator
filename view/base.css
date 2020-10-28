@@ -34,9 +34,13 @@
     background-color: #7cb8bb;
 }
 
+.register-memory-slider-container {
+    grid-area: register-memory-slider-container;
+    background-color: #845dc4;
+}
+
 .register-memory-container {
     grid-area: register-memory-container;
-    background-color: #1d75b3;
 }
 
 .editor-title-container {
@@ -47,6 +51,10 @@
 .pipeline-title-container {
     grid-area: pipeline-title-container;
     background-color: #9c3328;
+}
+
+.register-memory-title-container {
+    grid-area: register-memory-title-container;
 }
 
 [class*=-button] {
@@ -66,9 +74,11 @@
     grid-gap: 10px;
     display: grid;
     grid-template-columns: 20% 15% 5% 15% 5% 15% 20%;
-    grid-template-rows: 10% 450px 10% 10% 20%;
+    grid-template-rows: 10% 80px 20px 350px 10% 10% 20%;
     grid-template-areas:
     "editor-title-container pipeline-title-container pipeline-title-container pipeline-title-container pipeline-title-container pipeline-title-container ."
+    "editor-container pipeline-container pipeline-container pipeline-container pipeline-container pipeline-container register-memory-title-container"
+    "editor-container pipeline-container pipeline-container pipeline-container pipeline-container pipeline-container register-memory-slider-container"
     "editor-container pipeline-container pipeline-container pipeline-container pipeline-container pipeline-container register-memory-container"
     "editor-container hazard-feedback-container hazard-feedback-container hazard-feedback-container hazard-feedback-container hazard-feedback-container ."
     "pipeline-button-container show-hazards-button-container show-hazards-button-container data-hazard-button-container control-hazard-button-container control-hazard-button-container ."
