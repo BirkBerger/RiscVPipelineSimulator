@@ -1,9 +1,9 @@
-/* TODO: From here: https://www.w3schools.com/howto/howto_css_switch.asp */
-/* made small changes */
-
 .register-memory-slider-container {
     width: 230px;
 }
+
+/* TODO: From here: https://www.w3schools.com/howto/howto_css_switch.asp */
+/* made small changes */
 
 /* The switch - the box around the slider */
 .switch {
@@ -28,7 +28,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #76A1A1;
     -webkit-transition: .4s;
     transition: .4s;
 }
@@ -37,7 +37,7 @@
     position: absolute;
     content: "";
     height: 12px;
-    width: 115px;
+    width: 108px;
     left: 4px;
     bottom: 4px;
     background-color: white;
@@ -46,15 +46,15 @@
 }
 
 input:checked + .slider {
-    background-color: #2196F3;
+    background-color: #76A1A1;
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #76A1A1;
 }
 
 input:checked + .slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
-    transform: translateX(106px);
+    transform: translateX(113px);
 }

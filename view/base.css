@@ -13,10 +13,12 @@
 
 .pipeline-container {
     grid-area: pipeline-container;
+    /*background-color: #845dc4;*/
 }
 
 .hazard-feedback-container {
     grid-area: hazard-feedback-container;
+    background-color: #4D344A;
 }
 
 .show-hazards-button-container {
@@ -24,14 +26,9 @@
     background-color: #4D344A;
 }
 
-.data-hazard-button-container {
-    grid-area: data-hazard-button-container;
-    background-color: #00d95a;
-}
-
-.control-hazard-button-container {
-    grid-area: control-hazard-button-container;
-    background-color: #7cb8bb;
+.solve-hazards-container {
+    grid-area: solve-hazards-container;
+    background-color: #9999CC;
 }
 
 .register-memory-slider-container {
@@ -73,14 +70,14 @@
     margin: 2%;
     grid-gap: 10px;
     display: grid;
-    grid-template-columns: 20% 15% 5% 15% 5% 15% 20%;
+    grid-template-columns: 20% 40% 20% 20%;
     grid-template-rows: 10% 80px 20px 350px 10% 10% 20%;
     grid-template-areas:
-    "editor-title-container pipeline-title-container pipeline-title-container pipeline-title-container pipeline-title-container pipeline-title-container ."
-    "editor-container pipeline-container pipeline-container pipeline-container pipeline-container pipeline-container register-memory-title-container"
-    "editor-container pipeline-container pipeline-container pipeline-container pipeline-container pipeline-container register-memory-slider-container"
-    "editor-container pipeline-container pipeline-container pipeline-container pipeline-container pipeline-container register-memory-container"
-    "editor-container hazard-feedback-container hazard-feedback-container hazard-feedback-container hazard-feedback-container hazard-feedback-container ."
-    "pipeline-button-container show-hazards-button-container show-hazards-button-container data-hazard-button-container control-hazard-button-container control-hazard-button-container ."
-    "code-feedback-container . . . . . ."
+    "editor-title-container pipeline-title-container pipeline-title-container ."
+    "editor-container pipeline-container pipeline-container register-memory-title-container"
+    "editor-container pipeline-container pipeline-container register-memory-slider-container"
+    "editor-container pipeline-container pipeline-container register-memory-container"
+    "editor-container hazard-feedback-container solve-hazards-container ."
+    "pipeline-button-container . . ."
+    "code-feedback-container . . ."
 }

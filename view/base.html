@@ -36,6 +36,7 @@
         <link rel="stylesheet" href="buttons.css">
         <link rel="stylesheet" href="regMemTable.css">
         <link rel="stylesheet" href="regMemSlider.css">
+        <link rel="stylesheet" href="solverSlider.css">
         <link rel="stylesheet" href="titles.css">
         <script src="../jquery.line.js"></script>
 
@@ -88,27 +89,37 @@
                 <textarea id="hazard-feedback" disabled="true"></textarea>
             </div>
 
-            <div class="show-hazards-button-container">
-                <button class="button" id="show-hazards-button">Show hazards</button>
-            </div>
+            <div class="solve-hazards-container">
 
-            <div class="data-hazard-button-container">
-                <form method="post" action="/Tests/Post/">
-                    <fieldset>
-                        <input type="checkbox" id="solve-data-hazards" onclick="checkBoxClicked()">Solve data hazards<br>
-                        <input type="checkbox" id="solve-control-hazards" onclick="checkBoxClicked()">Solve control hazards<br>
-                    </fieldset>
-                </form>
+                <div class="solver-switch-container">
+                    <form method="post" action="/Tests/Post/">
+                        <fieldset>
+                            <label class="switch round">
+                                <input type="checkbox" id="solve-data-hazards" onclick="checkBoxClicked()">
+                                <span class="slider round"></span>
+                            </label>
+                            <label class="switch round">
+                                <input type="checkbox" id="solve-control-hazards" onclick="checkBoxClicked()">
+                                <span class="slider round"></span>
+                            </label>
+                        </fieldset>
+                    </form>
+                </div>
+
+                <div class="solver-text-container">
+
+                </div>
+
             </div>
 
             <div class="register-memory-title-container">
-                <textarea id="register-title" disabled="true">General purpose registers</textarea>
-                <textarea id="memory-title" disabled="true">Data memory</textarea>
+                <div class="register-title-container" onclick="regTitleClicked()">General purpose registers</div>
+                <div class="memory-title-container" onclick="memTitleClicked()">Data memory </div>
             </div>
 
             <div class="register-memory-slider-container">
                 <label class="switch">
-                    <input type="checkbox">
+                    <input type="checkbox" id="reg-mem-slider" onclick="sliderChanged()">
                     <span class="slider"></span>
                 </label>
             </div>

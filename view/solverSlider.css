@@ -1,0 +1,35 @@
+.solver-switch-container {
+    width: 60px;
+}
+
+/* TODO: From here: https://www.w3schools.com/howto/howto_css_switch.asp */
+/* made small changes */
+
+/* The switch - the box around the slider */
+.switch.round {
+    width: 50px;
+    height: 30px;
+}
+
+input:checked + .slider.round {
+    background-color: #5c6065;
+}
+
+input:focus + .slider.round {
+    box-shadow: 0 0 1px #5c6065;
+}
+
+input:checked + .slider.round:before {
+    transform: translateX(19px);
+}
+
+.slider.round {
+    background-color: #ccc;
+    border-radius: 30px;
+}
+
+.slider.round:before {
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+}
