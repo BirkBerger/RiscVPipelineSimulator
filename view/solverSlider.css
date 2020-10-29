@@ -11,14 +11,6 @@
     height: 30px;
 }
 
-input:checked + .slider.round {
-    background-color: #5c6065;
-}
-
-input:focus + .slider.round {
-    box-shadow: 0 0 1px #5c6065;
-}
-
 input:checked + .slider.round:before {
     transform: translateX(19px);
 }

@@ -21,7 +21,6 @@
 
 .show-hazards-button-container {
     grid-area: show-hazards-button-container;
-    background-color: #4D344A;
 }
 
 .solve-hazards-container {
@@ -30,7 +29,6 @@
 
 .register-memory-slider-container {
     grid-area: register-memory-slider-container;
-    background-color: #845dc4;
 }
 
 .register-memory-container {
@@ -39,12 +37,10 @@
 
 .editor-title-container {
     grid-area: editor-title-container;
-    background-color: #4d4d4d;
 }
 
 .pipeline-title-container {
     grid-area: pipeline-title-container;
-    background-color: #9c3328;
 }
 
 .register-memory-title-container {
