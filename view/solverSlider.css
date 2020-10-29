@@ -33,3 +33,7 @@ input:checked + .slider.round:before {
     width: 23px;
     border-radius: 50%;
 }
+
+.solver-switch-container {
+    float: left;
+}

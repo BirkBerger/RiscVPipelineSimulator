@@ -26,7 +26,7 @@
 <!--        my js files with jQuery code-->
         <script type="text/javascript" src="../lib/jq-assemblyEditor.js"></script>
         <script type="text/javascript" src="../lib/jq-pipeline.js"></script>
-        <script type="text/javascript" src="../lib/jq-hazardSwitches.js"></script>
+        <script type="text/javascript" src="../lib/jq-solverSwitches.js"></script>
         <script type="text/javascript" src="../lib/jq-regMem.js"></script>
 
 <!--        my css files -->
@@ -95,20 +95,19 @@
                     <form method="post" action="/Tests/Post/">
                         <fieldset>
                             <label class="switch round">
-                                <input type="checkbox" id="solve-data-hazards" onclick="checkBoxClicked()">
+                                <input type="checkbox" id="solve-data-hazards" onclick="solverSwitched()">
                                 <span class="slider round"></span>
                             </label>
                             <label class="switch round">
-                                <input type="checkbox" id="solve-control-hazards" onclick="checkBoxClicked()">
+                                <input type="checkbox" id="solve-control-hazards" onclick="solverSwitched()">
                                 <span class="slider round"></span>
                             </label>
                         </fieldset>
                     </form>
                 </div>
 
-                <div class="solver-text-container">
-
-                </div>
+                <div class="data-solver-text-container">Solve data hazards</div>
+                <div class="control-solver-text-container">Solve control hazards</div>
 
             </div>
 
@@ -119,7 +118,7 @@
 
             <div class="register-memory-slider-container">
                 <label class="switch">
-                    <input type="checkbox" id="reg-mem-slider" onclick="sliderChanged()">
+                    <input type="checkbox" id="reg-mem-slider" onclick="regMemSliderChanged()">
                     <span class="slider"></span>
                 </label>
             </div>

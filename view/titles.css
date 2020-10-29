@@ -20,4 +20,20 @@
     float: left;
 }
 
+.data-solver-text-container {
+    font-family: Tahoma, Geneva, sans-serif;
+    padding-top: 2%;
+    font-size: 16px;
+    float: left;
+    height: 50%;
+}
+
+.control-solver-text-container {
+    font-family: Tahoma, Geneva, sans-serif;
+    padding-top: 2%;
+    font-size: 16px;
+    float: left;
+    height: 50%;
+}
+
 
