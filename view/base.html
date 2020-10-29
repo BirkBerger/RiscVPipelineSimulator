@@ -33,11 +33,10 @@
         <link rel="stylesheet" href="base.css">
         <link rel="stylesheet" href="editor.css">
         <link rel="stylesheet" href="pipeline.css">
-        <link rel="stylesheet" href="buttons.css">
         <link rel="stylesheet" href="regMemTable.css">
         <link rel="stylesheet" href="regMemSlider.css">
         <link rel="stylesheet" href="solverSlider.css">
-        <link rel="stylesheet" href="titles.css">
+        <link rel="stylesheet" href="texts.css">
         <script src="../jquery.line.js"></script>
 
 <!--        Bootstrap-->
@@ -86,11 +85,11 @@
             </div>
 
             <div class="hazard-feedback-container">
-                <textarea id="hazard-feedback" disabled="true"></textarea>
+                <p id="hazard-feedback">Hazards detected</p>
+                <p id="number-of-hazards">0</p>
             </div>
 
             <div class="solve-hazards-container">
-
                 <div class="solver-switch-container">
                     <form method="post" action="/Tests/Post/">
                         <fieldset>

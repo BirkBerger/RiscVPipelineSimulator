@@ -1,5 +1,5 @@
 .table-container {
-    width: 816px;
+    width: 826px;
     height: 467px;
     overflow: scroll;
     border: 1px solid #5c6773;
@@ -93,5 +93,6 @@
     margin: 0px;
     border-spacing: 0px;
 }
+
 
 

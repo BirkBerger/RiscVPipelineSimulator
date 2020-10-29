@@ -1,8 +1,41 @@
 .editor-wrapper {
-    height: 520px;
+    height: 467px;
+    border: 1px solid #5c6773;
 }
 
 #code-feedback {
     overflow: auto;
     resize: none
+}
+
+.pipeline-button-container {
+    padding-top: 3%;
+}
+
+#pipeline-instructions-button {
+    font-family: Tahoma, Geneva, sans-serif;
+    width: 200px;
+    height: 45px;
+    background-color: #83B3B3;
+    color: white;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+    border: none;
+}
+
+#pipeline-instructions-button:focus {
+    outline: #83B3B3;
+}
+
+#pipeline-instructions-button:hover {
+    background-color: #567575;
+    color: white;
+}
+
+#pipeline-instructions-button:active {
+    transform: scale(0.8);
+    /* Scaling button to 0.98 to its original size */
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    /* Lowering the shadow */
 }

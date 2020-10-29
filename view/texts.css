@@ -26,6 +26,7 @@
     font-size: 16px;
     float: left;
     height: 50%;
+    color: #6A6A6A;
 }
 
 .control-solver-text-container {
@@ -34,6 +35,23 @@
     font-size: 16px;
     float: left;
     height: 50%;
+    color: #6A6A6A;
+}
+
+.hazard-feedback-container {
+    font-family: Tahoma, Geneva, sans-serif;
+    text-align: center;
+    line-height: 0.8em;
+    padding-top: 2%;
+    font-size: 18px;
+    color: #6A6A6A;
+}
+
+#hazard-feedback {
+}
+
+#number-of-hazards {
+    font-weight: bold;
 }
 
 

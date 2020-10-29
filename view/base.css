@@ -13,12 +13,10 @@
 
 .pipeline-container {
     grid-area: pipeline-container;
-    /*background-color: #845dc4;*/
 }
 
 .hazard-feedback-container {
     grid-area: hazard-feedback-container;
-    background-color: #4D344A;
 }
 
 .show-hazards-button-container {
@@ -69,14 +67,13 @@
     margin: 2%;
     grid-gap: 10px;
     display: grid;
-    grid-template-columns: 20% 40% 20% 20%;
-    grid-template-rows: 10% 80px 20px 350px 10% 10% 20%;
+    grid-template-columns: 20% 580px 236px 20%;
+    grid-template-rows: 10% 80px 20px 350px 10% 30%;
     grid-template-areas:
     "editor-title-container pipeline-title-container pipeline-title-container ."
     "editor-container pipeline-container pipeline-container register-memory-title-container"
     "editor-container pipeline-container pipeline-container register-memory-slider-container"
     "editor-container pipeline-container pipeline-container register-memory-container"
-    "editor-container hazard-feedback-container solve-hazards-container ."
-    "pipeline-button-container . . ."
+    "pipeline-button-container hazard-feedback-container solve-hazards-container ."
     "code-feedback-container . . ."
 }
