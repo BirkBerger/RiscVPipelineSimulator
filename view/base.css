@@ -47,6 +47,10 @@
     grid-area: register-memory-title-container;
 }
 
+.register-memory-title-container {
+    grid-area: register-memory-title-container;
+}
+
 [class*=-button] {
     justify-self: center;
 }
@@ -60,6 +64,7 @@
 }
 
 .grid {
+    justify-content: center;
     margin: 2%;
     grid-gap: 10px;
     display: grid;
