@@ -2,7 +2,7 @@
     width: 826px;
     height: 467px;
     overflow: scroll;
-    border: 1px solid #5c6773;
+    border: 1px solid #9f9f9f;
     display: inline-block;
     position: absolute;
     z-index: 0;
@@ -48,7 +48,7 @@
     z-index: 1;
     top: 0;
     padding: 0;
-    border-bottom: 1px solid #5c6773;
+    border-bottom: 1px solid #9f9f9f;
 }
 
 /* Clock cycle columns */
@@ -75,7 +75,8 @@
 
 /* Pipeline stage cells */
 .stage-cell {
-    border: 1px solid #5c6773;
+    color: #4d4d4d;
+    border: 1px solid #9f9f9f;
     padding: 0;
     margin: 0;
     border-spacing: 0;
@@ -96,6 +97,7 @@
     margin: 0;
     border-spacing: 0;
 }
+
 
 
 

@@ -2,9 +2,9 @@
     width: 230px;
     height: 347px;
     overflow: scroll;
-    border: 1px solid #5c6773;
+    border: 1px solid #9f9f9f;
     display: inline-block;
-    z-index: 0;
+    z-index: 2;
 }
 
 #register-memory-table {

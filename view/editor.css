@@ -1,11 +1,15 @@
 .editor-wrapper {
     height: 467px;
-    border: 1px solid #5c6773;
+    border: 1px solid #9f9f9f;
 }
 
 #code-feedback {
+    width: 100%;
+    height: 80%;
     overflow: auto;
-    resize: none
+    resize: none;
+    color: #822;
+    font-size: 14px;
 }
 
 .pipeline-button-container {

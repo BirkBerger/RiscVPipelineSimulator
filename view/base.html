@@ -46,6 +46,7 @@
 <!--        Codemirror-->
         <script type="text/javascript" src="../codemirror/lib/codemirror.js"></script>
         <link rel="stylesheet" href="../codemirror/lib/codemirror.css">
+        <script type="text/javascript" src="../codemirror/addon/display/placeholder.js"></script>
         <script type="text/javascript" src="../codemirror/mode/verilog/verilog.js"></script>
         <script type="text/javascript" src="../codemirror/theme/eclipse.css"></script>
 
@@ -65,7 +66,7 @@
 
             <div class="editor-container">
                 <div class="editor-wrapper">
-                    <textarea id="editor-textarea"></textarea>
+                    <textarea id="editor-textarea" placeholder="Write your assembly code here..."></textarea>
                 </div>
             </div>
 
@@ -75,11 +76,11 @@
 
             <div class="code-feedback-container">
                 <textarea id="code-feedback" disabled="true"></textarea>
-
             </div>
 
             <div class="pipeline-container">
                 <div class="table-container">
+                    <div class="pipeline-placeholder">Press "Pipeline instructions" to see your RISC-V instructions pipelined here</div>
                     <div class="table-wrapper"></div>
                 </div>
             </div>
@@ -128,6 +129,7 @@
                         <tbody>
                         </tbody>
                     </table>
+                    <div class="register-memory-placeholder">Click on a clock cycle in the pipeline to see the RISC-V general purpose registers and relevant data memory contents at this time</div>
                 </div>
             </div>
 
