@@ -63,7 +63,7 @@
     margin: 2%;
     grid-gap: 10px;
     display: grid;
-    grid-template-columns: 20% 580px 236px 20%;
+    grid-template-columns: 20% 580px 236px 17%;
     grid-template-rows: 10% 80px 20px 350px 10% 30%;
     grid-template-areas:
     "editor-title-container pipeline-title-container pipeline-title-container ."

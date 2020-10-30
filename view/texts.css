@@ -25,17 +25,20 @@
     text-align: center;
     line-height: 1.1em;
     cursor:pointer;
+    width: 100%;
 }
 
 .register-title-container {
     padding-top: 3%;
-    width: 115px;
+    width: 114px;
+    height: 100%;
     float: left;
 }
 
 .memory-title-container {
     padding-top: 7%;
-    width: 115px;
+    width: 114px;
+    height: 100%;
     float: left;
 }
 
