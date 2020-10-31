@@ -2,9 +2,9 @@
     width: 660px;
     height: 467px;
     overflow: scroll;
-    border: 1px solid #9f9f9f;
     display: inline-block;
     position: absolute;
+    border: 1px solid #9f9f9f;
     z-index: 0;
 }
 
