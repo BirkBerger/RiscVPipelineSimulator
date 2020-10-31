@@ -68,7 +68,7 @@
     margin: 2%;
     grid-gap: 10px;
     display: grid;
-    grid-template-columns: 20% 580px 236px 17%;
+    grid-template-columns: 20% 450px 200px 20%;
     grid-template-rows: 6% 4% 80px 20px 350px 10% 30%;
     grid-template-areas:
     ". . . ."

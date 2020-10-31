@@ -7,12 +7,12 @@
 
 /* The switch - the box around the slider */
 .switch.round {
-    width: 50px;
+    width: 85%;
     height: 30px;
 }
 
 input:checked + .slider.round:before {
-    transform: translateX(19px);
+    transform: translateX(94%);
 }
 
 .slider.round {
@@ -24,6 +24,7 @@ input:checked + .slider.round:before {
     height: 23px;
     width: 23px;
     border-radius: 50%;
+    left: 6%;
 }
 
 .solver-switch-container {

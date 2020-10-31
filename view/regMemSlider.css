@@ -1,5 +1,5 @@
 .register-memory-slider-container {
-    width: 230px;
+    width: 100%;
 }
 
 /* TODO: From here: https://www.w3schools.com/howto/howto_css_switch.asp */
@@ -9,8 +9,8 @@
 .switch {
     position: relative;
     display: inline-block;
-    width: 230px;
-    height: 20px;
+    width: 100%;
+    height: 100%;
 }
 
 /* Hide default HTML checkbox */
@@ -36,9 +36,9 @@
 .slider:before {
     position: absolute;
     content: "";
-    height: 12px;
-    width: 108px;
-    left: 4px;
+    height: 60%;
+    width: 50%;
+    left: 2%;
     bottom: 4px;
     background-color: white;
     -webkit-transition: .4s;
@@ -56,5 +56,5 @@ input:focus + .slider {
 input:checked + .slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
-    transform: translateX(113px);
+    transform: translateX(94%);
 }

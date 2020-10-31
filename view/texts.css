@@ -26,14 +26,14 @@
 
 .register-title-container {
     padding-top: 3%;
-    width: 114px;
+    width: 50%;
     height: 100%;
     float: left;
 }
 
 .memory-title-container {
     padding-top: 7%;
-    width: 114px;
+    width: 50%;
     height: 100%;
     float: left;
 }
@@ -71,10 +71,10 @@
 }
 
 .pipeline-placeholder {
-    width: 826px;
-    height: 467px;
+    width: 100%;
+    height: 100%;
     text-align: center;
-    padding-top: 25%;
+    padding-top: 35%;
     color: #9f9f9f;
 }
 
