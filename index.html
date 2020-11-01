@@ -7,48 +7,48 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 
 <!--        my exception js files-->
-        <script type="text/javascript" src="../lib/exceptions/infiniteLoopException.js"></script>
-        <script type="text/javascript" src="../lib/exceptions/divisionByZeroException.js"></script>
+        <script type="text/javascript" src="lib/exceptions/infiniteLoopException.js"></script>
+        <script type="text/javascript" src="lib/exceptions/divisionByZeroException.js"></script>
 
 <!--        my js files related to assembly editor-->
-        <script type="text/javascript" src="../lib/assemblyError.js"></script>
-        <script type="text/javascript" src="../lib/assemblyParser.js"></script>
-        <script type="text/javascript" src="../lib/assemblyCleaner.js"></script>
-        <script type="text/javascript" src="../lib/assemblyInterpreter.js"></script>
+        <script type="text/javascript" src="lib/assemblyError.js"></script>
+        <script type="text/javascript" src="lib/assemblyParser.js"></script>
+        <script type="text/javascript" src="lib/assemblyCleaner.js"></script>
+        <script type="text/javascript" src="lib/assemblyInterpreter.js"></script>
 
 <!--        my js files related to pipeline table-->
-        <script type="text/javascript" src="../lib/controlHazardHandler.js"></script>
-        <script type="text/javascript" src="../lib/dataHazardHandler.js"></script>
-        <script type="text/javascript" src="../lib/hazardDetector.js"></script>
-        <script type="text/javascript" src="../lib/hazardSolver.js"></script>
-        <script type="text/javascript" src="../lib/pipelineTable.js"></script>
+        <script type="text/javascript" src="lib/controlHazardHandler.js"></script>
+        <script type="text/javascript" src="lib/dataHazardHandler.js"></script>
+        <script type="text/javascript" src="lib/hazardDetector.js"></script>
+        <script type="text/javascript" src="lib/hazardSolver.js"></script>
+        <script type="text/javascript" src="lib/pipelineTable.js"></script>
 
 <!--        my js files with jQuery code-->
-        <script type="text/javascript" src="../lib/jq-assemblyEditor.js"></script>
-        <script type="text/javascript" src="../lib/jq-pipeline.js"></script>
-        <script type="text/javascript" src="../lib/jq-solverSwitches.js"></script>
-        <script type="text/javascript" src="../lib/jq-regMem.js"></script>
+        <script type="text/javascript" src="lib/jq-assemblyEditor.js"></script>
+        <script type="text/javascript" src="lib/jq-pipeline.js"></script>
+        <script type="text/javascript" src="lib/jq-solverSwitches.js"></script>
+        <script type="text/javascript" src="lib/jq-regMem.js"></script>
 
 <!--        my css files -->
-        <link rel="stylesheet" href="base.css">
-        <link rel="stylesheet" href="editor.css">
-        <link rel="stylesheet" href="pipeline.css">
-        <link rel="stylesheet" href="regMemTable.css">
-        <link rel="stylesheet" href="regMemSlider.css">
-        <link rel="stylesheet" href="solverSlider.css">
-        <link rel="stylesheet" href="texts.css">
-        <script src="../jquery.line.js"></script>
+        <link rel="stylesheet" href="view/grid.css">
+        <link rel="stylesheet" href="view/editor.css">
+        <link rel="stylesheet" href="view/pipeline.css">
+        <link rel="stylesheet" href="view/regMemTable.css">
+        <link rel="stylesheet" href="view/regMemSlider.css">
+        <link rel="stylesheet" href="view/solverSlider.css">
+        <link rel="stylesheet" href="view/texts.css">
+        <script src="jquery.line.js"></script>
 
 <!--        Bootstrap-->
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 <!--        Codemirror-->
-        <script type="text/javascript" src="../codemirror/lib/codemirror.js"></script>
-        <link rel="stylesheet" href="../codemirror/lib/codemirror.css">
-        <script type="text/javascript" src="../codemirror/addon/display/placeholder.js"></script>
-        <script type="text/javascript" src="../codemirror/mode/verilog/verilog.js"></script>
-        <script type="text/javascript" src="../codemirror/theme/eclipse.css"></script>
+        <script type="text/javascript" src="codemirror/lib/codemirror.js"></script>
+        <link rel="stylesheet" href="codemirror/lib/codemirror.css">
+        <script type="text/javascript" src="codemirror/addon/display/placeholder.js"></script>
+        <script type="text/javascript" src="codemirror/mode/verilog/verilog.js"></script>
+        <script type="text/javascript" src="codemirror/theme/eclipse.css"></script>
 
 <!--        DataTables-->
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
@@ -90,7 +90,7 @@
                 <p id="number-of-hazards">0</p>
             </div>
 
-            <div class="solve-hazards-container">
+            <div class="solve-data-hazards-container">
                 <div class="solver-switch-container">
                     <form method="post" action="/Tests/Post/">
                         <fieldset>
@@ -98,6 +98,16 @@
                                 <input type="checkbox" id="solve-data-hazards" onclick="solverSwitched()">
                                 <span class="slider round"></span>
                             </label>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="data-solver-text-container">Solve data hazards</div>
+            </div>
+
+            <div class="solve-control-hazards-container">
+                <div class="solver-switch-container">
+                    <form method="post" action="/Tests/Post/">
+                        <fieldset>
                             <label class="switch round">
                                 <input type="checkbox" id="solve-control-hazards" onclick="solverSwitched()">
                                 <span class="slider round"></span>
@@ -105,16 +115,12 @@
                         </fieldset>
                     </form>
                 </div>
-
-                <div class="data-solver-text-container">Solve data hazards</div>
                 <div class="control-solver-text-container">Solve control hazards</div>
-
             </div>
 
-            <div class="register-memory-title-container">
-                <div class="register-title-container" onclick="regTitleClicked()">General purpose registers</div>
-                <div class="memory-title-container" onclick="memTitleClicked()">Data memory </div>
-            </div>
+            <div class="register-title-container" onclick="regTitleClicked()">General purpose registers</div>
+            <div class="memory-title-container" onclick="memTitleClicked()">Data memory </div>
+
 
             <div class="register-memory-slider-container">
                 <label class="switch">
@@ -133,8 +139,8 @@
                 </div>
             </div>
 
-            <div class="editor-title-container">Assembly Code Editor</div>
-            <div class="pipeline-title-container">Five Stage Pipeline</div>
+            <div class="editor-title-container">RISC-V Assembly Code</div>
+            <div class="pipeline-title-container">Five-stage Pipeline</div>
         </div>
 
     </body>

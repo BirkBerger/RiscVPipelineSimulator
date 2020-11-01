@@ -1,0 +1,118 @@
+
+.editor-container {
+    grid-area: editor-container;
+}
+
+.pipeline-button-container {
+    grid-area: pipeline-button-container;
+}
+
+.code-feedback-container {
+    grid-area: code-feedback-container;
+}
+
+.pipeline-container {
+    grid-area: pipeline-container;
+}
+
+.hazard-feedback-container {
+    grid-area: hazard-feedback-container;
+}
+
+.show-hazards-button-container {
+    grid-area: show-hazards-button-container;
+}
+
+.solve-data-hazards-container {
+    grid-area: solve-data-hazards-container;
+}
+
+.solve-control-hazards-container {
+    grid-area: solve-control-hazards-container;
+}
+
+.register-memory-slider-container {
+    grid-area: register-memory-slider-container;
+}
+
+.register-memory-container {
+    grid-area: register-memory-container;
+}
+
+.editor-title-container {
+    grid-area: editor-title-container;
+}
+
+.pipeline-title-container {
+    grid-area: pipeline-title-container;
+}
+
+.register-title-container {
+    grid-area: register-title-container;
+}
+
+.memory-title-container {
+    grid-area: memory-title-container;
+}
+
+
+[class*=-button] {
+    justify-self: center;
+}
+
+[class*="-container"] {
+    /*justify-self: center;*/
+    /*align-self: center;*/
+    /*padding: 2%;*/
+    /*display:flex;*/
+    /*align-items:center;*/
+}
+
+.grid {
+    justify-content: center;
+    margin: 2%;
+    grid-gap: 10px;
+    display: grid;
+    grid-template-columns: 320px 320px;
+    grid-template-rows:
+            2% 2% 450px 10% 20%
+            2% 467px 2% 2%
+            2% 2% 20px 340px 10%;
+    grid-template-areas:
+    ". ."
+    "editor-title-container editor-title-container"
+    "editor-container editor-container"
+    "pipeline-button-container pipeline-button-container"
+    "code-feedback-container code-feedback-container"
+
+    "pipeline-title-container pipeline-title-container"
+    "pipeline-container pipeline-container"
+    "hazard-feedback-container solve-data-hazards-container"
+    "hazard-feedback-container solve-control-hazards-container"
+
+    ". ."
+    "register-title-container memory-title-container"
+    "register-memory-slider-container register-memory-slider-container"
+    "register-memory-container register-memory-container"
+    ". ."
+}
+
+@media screen and (min-width: 680px) {
+    .grid {
+        justify-content: center;
+        margin: 2%;
+        grid-gap: 10px;
+        display: grid;
+        grid-template-columns: 20% 430px 220px 10% 10%;
+        grid-template-rows: 6% 4% 90px 20px 340px 4% 4% 30%;
+        grid-template-areas:
+        ". . . . ."
+        "editor-title-container pipeline-title-container pipeline-title-container . ."
+        "editor-container pipeline-container pipeline-container register-title-container memory-title-container"
+        "editor-container pipeline-container pipeline-container register-memory-slider-container register-memory-slider-container"
+        "editor-container pipeline-container pipeline-container register-memory-container register-memory-container"
+        "pipeline-button-container hazard-feedback-container solve-data-hazards-container . ."
+        "pipeline-button-container hazard-feedback-container solve-control-hazards-container . ."
+        "code-feedback-container . . . ."
+    }
+}
