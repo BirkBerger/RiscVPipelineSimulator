@@ -4,6 +4,10 @@
     font-weight: bold;
     font-size: 20px;
     text-align: center;
+    justify-content: center;
+    display: flex;
+    align-self: flex-end;
+    cursor:pointer;
 }
 
 .editor-title-container {
@@ -15,14 +19,10 @@
 }
 
 .register-title-container {
-    display: flex;
-    align-self: flex-end;
     cursor:pointer;
 }
 
 .memory-title-container {
-    display: flex;
-    align-self: flex-end;
     cursor:pointer;
 }
 
