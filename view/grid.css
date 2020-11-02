@@ -77,7 +77,7 @@
     grid-template-rows:
             2% 2% 450px 10% 20%
             2% 467px 2% 2%
-            2% 2% 20px 340px 10%;
+            2% 2% 20px 340px 2%;
     grid-template-areas:
     ". ."
     "editor-title-container editor-title-container"
