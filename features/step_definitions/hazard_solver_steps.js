@@ -1,8 +1,8 @@
 const {After, Before, Given, When, Then } = require('cucumber');
 const assert = require('assert');
 const fs = require('fs')
-const HazardSolver = require("../../lib/model/hazardHandler");
-const HazardSolverHolder = require("../../lib/holders/hazardSolverHolder");
+const HazardHandler = require("../../lib/model/hazardHandler");
+const HazardHandlerHolder = require("../../lib/holders/hazardHandlerHolder");
 const CleanerHolder = require("../../lib/holders/cleanerHolder");
 const CodeHolder = require("../../lib/holders/codeHolder");
 const AssemblyParser = require("../../lib/model/assemblyParser");
@@ -12,7 +12,7 @@ const AssemblyCleaner = require("../../lib/model/assemblyCleaner");
 let codeHolder;
 let parserHolder;
 let cleanerHolder;
-let hazardSolverHolder;
+let hazardHandlerHolder;
 
 
 Given("that the assembly editor holds the input with no errors: {string}", function (textFileName) {
@@ -30,31 +30,29 @@ Given('the assembly code is cleaned', function () {
 });
 
 Given('the data data_hazards are removed from the assembly code', function () {
-    let hazardSolver = new HazardSolver(cleanerHolder.getCleaner().cleanCode);
-    hazardSolver.detectAllHazards();
-    hazardSolver.solveAllHazards();
-    hazardSolverHolder = new HazardSolverHolder(hazardSolver);
+    let hazardHandler = new HazardHandler(cleanerHolder.getCleaner().cleanCode);
+    hazardHandler.detectAndSolveDataHazards([],[]);
+    hazardHandlerHolder = new HazardHandlerHolder(hazardHandler);
 });
 
 
 Then('{int} data data_hazards are detected', function (expectedAmount) {
-    // console.log(hazardSolverHolder.getHazardSolver().hazardFreeCode);
-    assert.equal(hazardSolverHolder.getHazardSolver().numberOfHazards, expectedAmount);
+    assert.equal(hazardHandlerHolder.getHazardHandler().numberOfHazards, expectedAmount);
 });
 
 Then('there is a forwarding line from line {int} at cc {float} to line {int} at {float}', function (srcLine, srcCC, desLine, desCC) {
-    let noHazardsAssemblyCode = hazardSolverHolder.getHazardSolver().hazardFreeCode;
-    assert((noHazardsAssemblyCode[srcLine][5].toString()).indexOf(srcCC + "," + desLine + "," + desCC) > -1);
+    let dataFreeHazardsCode = hazardHandlerHolder.getHazardHandler().hazardFreeCode;
+    assert((dataFreeHazardsCode[srcLine][5].toString()).indexOf(srcCC + "," + desLine + "," + desCC) > -1);
 });
 
 Then('there is a stall at line {int}', function (lineNumber) {
-    let hazardFreeAssemblyCode = hazardSolverHolder.getHazardSolver().hazardFreeCode;
-    assert(hazardFreeAssemblyCode[lineNumber] = "---");
+    let dataFreeHazardsCode = hazardHandlerHolder.getHazardHandler().hazardFreeCode;
+    assert(dataFreeHazardsCode[lineNumber][0] = "Stall");
 });
 
 Then('there are no forwarding lines', function () {
-    let hazardFreeAssemblyCode = hazardSolverHolder.getHazardSolver().hazardFreeCode;
-    for (var i = 0; i < hazardFreeAssemblyCode.length; i++) {
-        assert(hazardFreeAssemblyCode[5] = []);
+    let dataFreeHazardsCode = hazardHandlerHolder.getHazardHandler().hazardFreeCode;
+    for (var i = 0; i < dataFreeHazardsCode.length; i++) {
+        assert(dataFreeHazardsCode[5] = []);
     }
 });
