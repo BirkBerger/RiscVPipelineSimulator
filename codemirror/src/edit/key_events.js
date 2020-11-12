@@ -17,7 +17,7 @@ function doHandleBinding(cm, bound, dropShift) {
     if (!bound) return false
   }
   // Ensure previous input has been read, so that the handler sees a
-  // consistent view of the document
+  // consistent css of the document
   cm.display.input.ensurePolled()
   let prevShift = cm.display.shift, done = false
   try {

@@ -184,7 +184,7 @@
       var targetPos = (offOther.top - halfScreen) + ratio * (offOther.bot - offOther.top);
 
       var botDist, mix;
-      // Some careful tweaking to make sure no space is left out of view
+      // Some careful tweaking to make sure no space is left out of css
       // when scrolling to top or bottom.
       if (targetPos > sInfo.top && (mix = sInfo.top / halfScreen) < 1) {
         targetPos = targetPos * mix + sInfo.top * (1 - mix);
@@ -535,7 +535,7 @@
       to.replaceRange(from.getRange(origStart, origEnd), editStart, editEnd)
   }
 
-  // Merge view, containing 0, 1, or 2 diff views.
+  // Merge css, containing 0, 1, or 2 diff views.
 
   var MergeView = CodeMirror.MergeView = function(node, options) {
     if (!(this instanceof MergeView)) return new MergeView(node, options);

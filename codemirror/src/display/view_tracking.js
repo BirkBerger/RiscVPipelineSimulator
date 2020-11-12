@@ -4,7 +4,7 @@ import { visualLineEndNo, visualLineNo } from "../line/spans.js"
 import { findViewIndex } from "../measurement/position_measurement.js"
 import { indexOf } from "../util/misc.js"
 
-// Updates the display.view data structure for a given change to the
+// Updates the display.css data structure for a given change to the
 // document. From and to are in pre-change coordinates. Lendiff is
 // the amount of lines added or subtracted by the change. This is
 // used for changes that span multiple lines, or change the way
@@ -88,7 +88,7 @@ export function regLineChange(cm, line, type) {
   if (indexOf(arr, type) == -1) arr.push(type)
 }
 
-// Clear the view.
+// Clear the css.
 export function resetView(cm) {
   cm.display.viewFrom = cm.display.viewTo = cm.doc.first
   cm.display.view = []
@@ -120,7 +120,7 @@ function viewCuttingPoint(cm, oldN, newN, dir) {
   return {index: index, lineN: newN}
 }
 
-// Force the view to cover a given range, adding empty view element
+// Force the css to cover a given range, adding empty css element
 // or clipping off existing ones as needed.
 export function adjustView(cm, from, to) {
   let display = cm.display, view = display.view
@@ -141,7 +141,7 @@ export function adjustView(cm, from, to) {
   display.viewTo = to
 }
 
-// Count the number of lines in the view whose DOM representation is
+// Count the number of lines in the css whose DOM representation is
 // out of date (or nonexistent).
 export function countDirtyView(cm) {
   let view = cm.display.view, dirty = 0

@@ -123,8 +123,8 @@ export function hiddenTextarea() {
   let te = elt("textarea", null, null, "position: absolute; bottom: -1em; padding: 0; width: 1px; height: 1em; outline: none")
   let div = elt("div", [te], null, "overflow: hidden; position: relative; width: 3px; height: 0px;")
   // The textarea is kept positioned near the cursor to prevent the
-  // fact that it'll be scrolled into view on input from scrolling
-  // our fake cursor out of view. On webkit, when wrap=off, paste is
+  // fact that it'll be scrolled into css on input from scrolling
+  // our fake cursor out of css. On webkit, when wrap=off, paste is
   // very slow. So make the area wide instead.
   if (webkit) te.style.width = "1000px"
   else te.setAttribute("wrap", "off")

@@ -84,7 +84,7 @@ export function onScrollWheel(cm, e) {
   }
 
   // 'Project' the visible viewport to cover the area that is being
-  // scrolled into view (if we know enough to estimate it).
+  // scrolled into css (if we know enough to estimate it).
   if (dy && wheelPixelsPerUnit != null) {
     let pixels = dy * wheelPixelsPerUnit
     let top = cm.doc.scrollTop, bot = top + display.wrapper.clientHeight

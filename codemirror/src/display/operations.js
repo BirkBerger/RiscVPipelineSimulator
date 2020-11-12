@@ -143,7 +143,7 @@ function endOperation_finish(op) {
   if (op.scrollTop != null) setScrollTop(cm, op.scrollTop, op.forceScroll)
 
   if (op.scrollLeft != null) setScrollLeft(cm, op.scrollLeft, true, true)
-  // If we need to scroll a specific position into view, do so.
+  // If we need to scroll a specific position into css, do so.
   if (op.scrollToPos) {
     let rect = scrollPosIntoView(cm, clipPos(doc, op.scrollToPos.from),
                                  clipPos(doc, op.scrollToPos.to), op.scrollToPos.margin)

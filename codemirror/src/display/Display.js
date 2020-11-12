@@ -31,7 +31,7 @@ export function Display(place, doc, input, options) {
   d.lineSpace = eltP("div", [d.measure, d.lineMeasure, d.selectionDiv, d.cursorDiv, d.lineDiv],
                     null, "position: relative; outline: none")
   let lines = eltP("div", [d.lineSpace], "CodeMirror-lines")
-  // Moved around its parent to cover visible view.
+  // Moved around its parent to cover visible css.
   d.mover = elt("div", [lines], null, "position: relative")
   // Set to the height of the document, allowing scrolling.
   d.sizer = elt("div", [d.mover], "CodeMirror-sizer")
@@ -58,16 +58,16 @@ export function Display(place, doc, input, options) {
     else place(d.wrapper)
   }
 
-  // Current rendered range (may be bigger than the view window).
+  // Current rendered range (may be bigger than the css window).
   d.viewFrom = d.viewTo = doc.first
   d.reportedViewFrom = d.reportedViewTo = doc.first
   // Information about the rendered lines.
   d.view = []
   d.renderedView = null
   // Holds info about a single rendered line when it was rendered
-  // for measurement, while not in view.
+  // for measurement, while not in css.
   d.externalMeasured = null
-  // Empty space (in pixels) above the view
+  // Empty space (in pixels) above the css
   d.viewOffset = 0
   d.lastWrapHeight = d.lastWrapWidth = 0
   d.updateLineNumbers = null

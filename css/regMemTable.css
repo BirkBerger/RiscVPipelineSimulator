@@ -9,32 +9,30 @@
 
 #register-memory-table {
     width: 100%;
-    font-family: Palatino, 'Palatino Linotype', serif;
+    font-family: monospace;
     border-collapse: collapse;
+    color: #4d4d4d;
 
 }
 
 #register-memory-table td {
-    border: 1px solid #5c6773;
+    border: 1px solid #9f9f9f;
 }
 
 /* Rows */
 #register-memory-table tr {
     font-size: 13px;
     line-height: 5px;
+    height: 20px;
+    text-align: center;
 }
 
 #reg-name-cell {
-    width: 30px;
-    text-align: center;
+    width: 20%;
 }
 
 #mem-address-cell {
-    /*width: 30px;*/
-    text-align: center;
-}
-
-#mem-value-cell tr td {
+    width: 50%;
 }
 
 #register-memory-table tr:first-child td {

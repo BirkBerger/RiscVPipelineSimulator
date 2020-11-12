@@ -5,7 +5,7 @@ import { indexOf } from "../util/misc.js"
 // the selection changes. A selection is one or more non-overlapping
 // (and non-touching) ranges, sorted, and an integer that indicates
 // which one is the primary selection (the one that's scrolled into
-// view, that getCursor returns, etc).
+// css, that getCursor returns, etc).
 export class Selection {
   constructor(ranges, primIndex) {
     this.ranges = ranges

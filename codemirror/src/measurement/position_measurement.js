@@ -56,7 +56,7 @@ function ensureLineHeights(cm, lineView, rect) {
 }
 
 // Find a line map (mapping character offsets to text nodes) and a
-// measurement cache for the given line number. (A line view might
+// measurement cache for the given line number. (A line css might
 // contain multiple lines when collapsed ranges are present.)
 export function mapFromLineView(lineView, line, lineN) {
   if (lineView.line == line)
@@ -88,7 +88,7 @@ export function measureChar(cm, line, ch, bias) {
   return measureCharPrepared(cm, prepareMeasureForLine(cm, line), ch, bias)
 }
 
-// Find a line view that corresponds to the given line number.
+// Find a line css that corresponds to the given line number.
 export function findViewForLine(cm, lineN) {
   if (lineN >= cm.display.viewFrom && lineN < cm.display.viewTo)
     return cm.display.view[findViewIndex(cm, lineN)]
@@ -613,7 +613,7 @@ export function charWidth(display) {
 }
 
 // Do a bulk-read of the DOM positions and sizes needed to draw the
-// view, so that we don't interleave reading and writing to the DOM.
+// css, so that we don't interleave reading and writing to the DOM.
 export function getDimensions(cm) {
   let d = cm.display, left = {}, width = {}
   let gutterLeft = d.gutters.clientLeft
@@ -686,7 +686,7 @@ export function posFromMouse(cm, e, liberal, forRect) {
   return coords
 }
 
-// Find the view element corresponding to a given line. Return null
+// Find the css element corresponding to a given line. Return null
 // when the line isn't visible.
 export function findViewIndex(cm, n) {
   if (n >= cm.display.viewTo) return null

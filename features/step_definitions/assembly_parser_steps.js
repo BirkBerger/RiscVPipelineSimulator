@@ -1,7 +1,7 @@
 const {After, Before, Given, When, Then } = require('cucumber');
 const assert = require('assert');
 const fs = require('fs')
-const AssemblyParser = require('/Users/birkberger/Documents/DTU/Bachelorprojekt/RiscVPipelineSimulator/lib/assemblyParser');
+const AssemblyParser = require('/Users/birkberger/Documents/DTU/Bachelorprojekt/RiscVPipelineSimulator/lib/model/assemblyParser');
 const ErrorMessageHolder = require('/Users/birkberger/Documents/DTU/Bachelorprojekt/RiscVPipelineSimulator/lib/holders/errorMessageHolder');
 
 let errorMessageHolder;

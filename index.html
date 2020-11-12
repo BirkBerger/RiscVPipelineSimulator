@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Pipeline simulator</title>
+        <title>Risc-V PipelineVisuals Simulator</title>
 
 <!--        jQuery-->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
@@ -11,33 +11,32 @@
         <script type="text/javascript" src="lib/exceptions/divisionByZeroException.js"></script>
 
 <!--        my js files related to assembly editor-->
-        <script type="text/javascript" src="lib/assemblyError.js"></script>
-        <script type="text/javascript" src="lib/assemblyParser.js"></script>
-        <script type="text/javascript" src="lib/assemblyCleaner.js"></script>
-        <script type="text/javascript" src="lib/assemblyInterpreter.js"></script>
+        <script type="text/javascript" src="lib/model/assemblyErrorDetector.js"></script>
+        <script type="text/javascript" src="lib/model/assemblyParser.js"></script>
+        <script type="text/javascript" src="lib/model/assemblyCleaner.js"></script>
+        <script type="text/javascript" src="lib/model/assemblyInterpreter.js"></script>
 
 <!--        my js files related to pipeline table-->
-        <script type="text/javascript" src="lib/controlHazardHandler.js"></script>
-        <script type="text/javascript" src="lib/dataHazardHandler.js"></script>
-        <script type="text/javascript" src="lib/hazardDetector.js"></script>
-        <script type="text/javascript" src="lib/hazardSolver.js"></script>
-        <script type="text/javascript" src="lib/pipelineTable.js"></script>
+        <script type="text/javascript" src="lib/model/controlHazardHandler.js"></script>
+        <script type="text/javascript" src="lib/model/dataHazardHandler.js"></script>
+        <script type="text/javascript" src="lib/model/hazardHandler.js"></script>
+        <script type="text/javascript" src="lib/view/pipelineVisuals.js"></script>
 
 <!--        my js files with jQuery code-->
-        <script type="text/javascript" src="lib/jq-regMemTable.js"></script>
-        <script type="text/javascript" src="lib/jq-assemblyEditor.js"></script>
-        <script type="text/javascript" src="lib/jq-pipeline.js"></script>
-        <script type="text/javascript" src="lib/jq-solverSwitches.js"></script>
-        <script type="text/javascript" src="lib/jq-regMem.js"></script>
+        <script type="text/javascript" src="lib/view/regMemVisuals.js"></script>
+        <script type="text/javascript" src="lib/controllers/assemblyEditorController.js"></script>
+        <script type="text/javascript" src="lib/controllers/pipelineController.js"></script>
+        <script type="text/javascript" src="lib/controllers/solverSwitchController.js"></script>
+        <script type="text/javascript" src="lib/controllers/regMemController.js"></script>
 
 <!--        my css files -->
-        <link rel="stylesheet" href="view/grid.css">
-        <link rel="stylesheet" href="view/editor.css">
-        <link rel="stylesheet" href="view/pipeline.css">
-        <link rel="stylesheet" href="view/regMemTable.css">
-        <link rel="stylesheet" href="view/regMemSlider.css">
-        <link rel="stylesheet" href="view/solverSlider.css">
-        <link rel="stylesheet" href="view/texts.css">
+        <link rel="stylesheet" href="css/grid.css">
+        <link rel="stylesheet" href="css/editor.css">
+        <link rel="stylesheet" href="css/pipeline.css">
+        <link rel="stylesheet" href="css/regMemTable.css">
+        <link rel="stylesheet" href="css/regMemSlider.css">
+        <link rel="stylesheet" href="css/solverSwitch.css">
+        <link rel="stylesheet" href="css/texts.css">
         <script src="jquery.line.js"></script>
 
 <!--        Bootstrap-->
@@ -52,8 +51,8 @@
         <script type="text/javascript" src="codemirror/theme/eclipse.css"></script>
 
 <!--        DataTables-->
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
-        <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<!--        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">-->
+<!--        <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>-->
 
     </head>
 
@@ -132,7 +131,7 @@
 
             <div class="register-memory-container">
                 <div class="register-memory-wrapper">
-                    <table id="register-memory-table" class="dataTable">
+                    <table id="register-memory-table">
                         <tbody>
                         </tbody>
                     </table>

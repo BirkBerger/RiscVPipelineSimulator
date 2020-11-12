@@ -11,7 +11,7 @@ import { updateDisplaySimple } from "./update_display.js"
 // SCROLLING THINGS INTO VIEW
 
 // If an editor sits on the top or bottom of the window, partially
-// scrolled out of view, this ensures that the cursor is visible.
+// scrolled out of css, this ensures that the cursor is visible.
 export function maybeScrollWindow(cm, rect) {
   if (signalDOMEvent(cm, "scrollCursorIntoView")) return
 
@@ -29,7 +29,7 @@ export function maybeScrollWindow(cm, rect) {
   }
 }
 
-// Scroll a given position into view (immediately), verifying that
+// Scroll a given position into css (immediately), verifying that
 // it actually became visible (as line heights are accurately
 // measured, the position of something may 'drift' during drawing).
 export function scrollPosIntoView(cm, pos, end, margin) {
@@ -65,7 +65,7 @@ export function scrollPosIntoView(cm, pos, end, margin) {
   return rect
 }
 
-// Scroll a given set of coordinates into view (immediately).
+// Scroll a given set of coordinates into css (immediately).
 export function scrollIntoView(cm, rect) {
   let scrollPos = calculateScrollPos(cm, rect)
   if (scrollPos.scrollTop != null) updateScrollTop(cm, scrollPos.scrollTop)
@@ -73,7 +73,7 @@ export function scrollIntoView(cm, rect) {
 }
 
 // Calculate a new scroll position needed to scroll the given
-// rectangle into view. Returns an object with scrollTop and
+// rectangle into css. Returns an object with scrollTop and
 // scrollLeft properties. When these are undefined, the
 // vertical/horizontal position does not need to be adjusted.
 function calculateScrollPos(cm, rect) {
@@ -133,7 +133,7 @@ export function scrollToRange(cm, range) {
 
 // When an operation has its scrollToPos property set, and another
 // scroll action is applied before the end of the operation, this
-// 'simulates' scrolling that position into view in a cheap way, so
+// 'simulates' scrolling that position into css in a cheap way, so
 // that the effect of intermediate scroll commands is not ignored.
 function resolveScrollToPos(cm) {
   let range = cm.curOp.scrollToPos

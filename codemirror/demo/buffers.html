@@ -79,7 +79,7 @@ function selectBuffer(editor, name) {
   var old = editor.swapDoc(buf);
   var linked = old.iterLinkedDocs(function(doc) {linked = doc;});
   if (linked) {
-    // Make sure the document in buffers is the one the other view is looking at
+    // Make sure the document in buffers is the one the other css is looking at
     for (var name in buffers) if (buffers[name] == old) buffers[name] = linked;
     old.unlinkDoc(linked);
   }

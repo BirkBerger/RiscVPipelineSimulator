@@ -104,7 +104,7 @@
         grid-gap: 10px;
         display: grid;
         grid-template-columns: 20% 430px 220px 10% 10%;
-        grid-template-rows: 6% 4% 90px 20px 340px 4% 4% 30%;
+        grid-template-rows: 6% 4% 90px 20px 340px 4% 5% 25%;
         grid-template-areas:
         ". . . . ."
         "editor-title-container pipeline-title-container pipeline-title-container . ."
@@ -113,6 +113,6 @@
         "editor-container pipeline-container pipeline-container register-memory-container register-memory-container"
         "pipeline-button-container hazard-feedback-container solve-data-hazards-container . ."
         "pipeline-button-container hazard-feedback-container solve-control-hazards-container . ."
-        "code-feedback-container . . . ."
+        "code-feedback-container code-feedback-container code-feedback-container code-feedback-container code-feedback-container"
     }
 }

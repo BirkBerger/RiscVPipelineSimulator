@@ -205,8 +205,8 @@ export function updateDisplaySimple(cm, viewport) {
   }
 }
 
-// Sync the actual display DOM structure with display.view, removing
-// nodes for lines that are no longer in view, and creating the ones
+// Sync the actual display DOM structure with display.css, removing
+// nodes for lines that are no longer in css, and creating the ones
 // that are not there yet, and updating the ones that are out of
 // date.
 function patchDisplay(cm, updateNumbersFrom, dims) {
@@ -224,8 +224,8 @@ function patchDisplay(cm, updateNumbersFrom, dims) {
   }
 
   let view = display.view, lineN = display.viewFrom
-  // Loop over the elements in the view, syncing cur (the DOM nodes
-  // in display.lineDiv) with the view as we go.
+  // Loop over the elements in the css, syncing cur (the DOM nodes
+  // in display.lineDiv) with the css as we go.
   for (let i = 0; i < view.length; i++) {
     let lineView = view[i]
     if (lineView.hidden) {

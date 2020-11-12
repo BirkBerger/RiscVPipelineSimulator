@@ -9,7 +9,7 @@ import { addSelectionToHistory } from "./history.js"
 import { normalizeSelection, Range, Selection, simpleSelection } from "./selection.js"
 
 // The 'scroll' parameter given to many of these indicated whether
-// the new cursor position should be scrolled into view after
+// the new cursor position should be scrolled into css after
 // modifying the selection.
 
 // If shift is held or the extend flag is set, extends a range to
