@@ -1,0 +1,11 @@
+addi x2, x0, 0
+addi x3, x0, 0
+addi x11, x11, 2047
+addi x11, x11, 2047
+addi x6, x0, -1
+mul x11, x11, x6
+add x12, x11, x2
+add x3, x11, x11
+mul x14, x12, x10
+auipc x11, 8345
+lui x12, 8345
