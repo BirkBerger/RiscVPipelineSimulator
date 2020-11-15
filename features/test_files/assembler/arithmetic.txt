@@ -4,18 +4,18 @@ addi x11, x11, 2047
 addi x11, x11, 2047
 addi x6, x0, -1
 mul x11, x11, x6
-addiw x12, x11, 2
+addi x12, x11, 2
 add x3, x11, x11
-addw x14, x12, x10
+add x14, x12, x10
 sub x8, x12, x3
-subw x9, x11, x3
+sub x9, x11, x3
 addi x7, x0, -3
 addi x4, x0, -2048
 addi x20, x0, 1874
 rem x21, x20, x4
 remu x25, x20, x4
-remuw x26, x20, x4
-remw x27, x20, x4
+remu x26, x20, x4
+rem x27, x20, x4
 addi x9, x0, -7
 slti x28, x7, -10
 sltiu x29, x7, -10
@@ -24,10 +24,10 @@ sltu x31, x9, x7
 mulh x15, x11, x11
 mulhsu x16, x11, x11
 mul x17, x12, x12
-mulw x17, x17, x4
+mul x17, x17, x4
 div x18, x11, x9
 divu x24, x11, x9
-divw x23, x8, x9
-divuw x22, x8, x9
+div x23, x8, x9
+divu x22, x8, x9
 
 

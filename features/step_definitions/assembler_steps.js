@@ -27,21 +27,26 @@ Given('the program is assembled and stored in memory', function () {
 
 Then('there are {int} bytes for every program instruction', function (bytesPerInstruction) {
     let actualMem = assemblerHolder.getAssembler().initialMem;
-    assert.equal(cleanerHolder.getCleaner().cleanCode.length * bytesPerInstruction, actualMem.length);
+    assert.equal(actualMem.length,cleanerHolder.getCleaner().cleanCode.length * bytesPerInstruction);
 });
 
-Then('the memory byte array starting at address zero is {string}', function (expectedMem) {
-    let expectedMemArr = expectedMem.split(',');
+Then('the memory byte array starting at address zero is', function (expectedMem) {
+    let expectedMemArr = expectedMem.replace(/\n/g, '').split(',');
     let actualMem = assemblerHolder.getAssembler().initialMem;
 
-    assert.equal(expectedMemArr.length,actualMem.length);
+    assert.equal(actualMem.length,expectedMemArr.length);
 
     let actualMemHex = formatMem(actualMem);
 
     printMem(actualMemHex);
 
+    var j = 0;
     for (var i = 0; i < expectedMemArr.length; i++) {
-        assert.equal(expectedMemArr[i], actualMemHex[i]);
+        if (i % 4 === 0) {
+            console.log("instruction in question: " + cleanerHolder.getCleaner().cleanCode[j]);
+            j++;
+        }
+        assert.equal(actualMemHex[i],expectedMemArr[i]);
     }
 });
 
