@@ -10,14 +10,16 @@ let errorMessageHolder;
 
 Given("that the assembly editor holds the content of {string}", function (textFileName) {
     let code = fs.readFileSync("features/test_files/assembly_parser/" + textFileName).toString();
+
+    // check syntax errors
     let parser = new AssemblyParser(code);
     let cleaner = new AssemblyCleaner();
     let errorMessage = parser.getAllInstructionErrors();
 
+    // check for runtime error and division by zero
     if (errorMessage === "") {
         cleaner.cleanAssemblyCode(code, parser.instructionSignals);
         let interpreter = new AssemblyInterpreter(cleaner.lineNumberByLabel);
-
         try {
             interpreter.interpretCleanAssemblyCode(cleaner.cleanCode);
         } catch (e) {

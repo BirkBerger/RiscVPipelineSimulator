@@ -122,7 +122,17 @@ Feature: Assembly parser
     Then the error message is thrown
       """
       Error in...
-      line 6:
+      line 9:
+      - Division by zero
+      """
+
+  # fail
+  Scenario: Empty file
+    Given that the assembly editor holds the content of "divisionByZeroRem.txt"
+    Then the error message is thrown
+      """
+      Error in...
+      line 8:
       - Division by zero
       """
 

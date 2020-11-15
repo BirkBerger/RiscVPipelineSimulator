@@ -1,0 +1,16 @@
+addiw x5, x0, -1
+addw x2, x4, x0
+subw x2, x4, x4
+mulw x1, x1, x2
+divw x3, x3, x15
+remw x11, x4, x8
+remuw x11, x4, x8
+sd x5, 1(x31)
+ld x2, 0(x9)
+lwu x4, 0(x9)
+sllw x3, x7, x10
+slliw x5, x7, 200
+srlw x8, x7, x10
+srliw x11, x7, 2043
+sraw x13, x7, x10
+sraiw x15, x7, 3

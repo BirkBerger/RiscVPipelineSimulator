@@ -34,8 +34,10 @@ Then('the memory byte array starting at address zero is', function (expectedMem)
     let expectedMemArr = expectedMem.replace(/\n/g, '').split(',');
     let actualMem = assemblerHolder.getAssembler().initialMem;
 
+    // check expected number of bytes in memory
     assert.equal(actualMem.length,expectedMemArr.length);
 
+    // convert actual memory to hexadecimal
     let actualMemHex = formatMem(actualMem);
 
     printMem(actualMemHex);
@@ -50,12 +52,21 @@ Then('the memory byte array starting at address zero is', function (expectedMem)
     }
 });
 
-function printMem(actualMemHex) {
-    for (var i = 0; i < actualMemHex.length; i+=4) {
-        console.log(actualMemHex.slice(i,i+4));
+/**
+ * Print memory four bytes in each line
+ * @param memInHexadecimal - Input memory array with bytes in hexadecimal
+ */
+function printMem(memInHexadecimal) {
+    for (var i = 0; i < memInHexadecimal.length; i+=4) {
+        console.log(memInHexadecimal.slice(i,i+4));
     }
 }
 
+/**
+ * Format memory array from BigInt to hexadecimal
+ * @param actualMem - Input memory array
+ * @returns {*} - Formatted memory array
+ */
 function formatMem(actualMem) {
     for (var i = 0; i < actualMem.length; i++) {
         actualMem[i] = formatMemValue(actualMem[i]);
@@ -64,6 +75,11 @@ function formatMem(actualMem) {
 }
 
 
+/**
+ * Format BigInt byte to hexadecimal byte
+ * @param memSlot - Memory byte
+ * @returns {string} - Formatted memory byte
+ */
 function formatMemValue(memSlot) {
     let hex = BigInt.asUintN(8, memSlot).toString(16);
     if (hex.length < 2) {
