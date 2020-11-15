@@ -40,12 +40,9 @@ Then('the memory byte array starting at address zero is', function (expectedMem)
     // convert actual memory to hexadecimal
     let actualMemHex = formatMem(actualMem);
 
-    printMem(actualMemHex);
-
     var j = 0;
     for (var i = 0; i < expectedMemArr.length; i++) {
         if (i % 4 === 0) {
-            console.log("instruction in question: " + cleanerHolder.getCleaner().cleanCode[j]);
             j++;
         }
         assert.equal(actualMemHex[i],expectedMemArr[i]);
