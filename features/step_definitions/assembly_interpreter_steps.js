@@ -8,7 +8,6 @@ const AssemblyCleaner = require("../../lib/model/assemblyCleaner");
 const CleanerHolder = require("../../lib/holders/cleanerHolder");
 const AssemblyInterpreter = require("../../lib/model/assemblyInterpreter");
 const InterpreterHolder = require("../../lib/holders/interpreterHolder");
-const InfiniteLoopException = require("../../lib/exceptions/infiniteLoopException");
 
 let codeHolder;
 let parserHolder;
@@ -27,11 +26,10 @@ Given('the code is cleaned', function () {
     let cleaner = new AssemblyCleaner();
     cleaner.cleanAssemblyCode(codeHolder.getCode(), parserHolder.getParser().instructionSignals);
     cleanerHolder = new CleanerHolder(cleaner);
-    // console.log(cleaner.cleanCode);
 });
 
 Given('the code is interpreted', function () {
-    let interpreter = new AssemblyInterpreter(parserHolder.getParser().labelsByLineNumber);
+    let interpreter = new AssemblyInterpreter(cleanerHolder.getCleaner().lineNumberByLabel);
     try {
         interpreter.interpretCleanAssemblyCode(cleanerHolder.getCleaner().cleanCode);
     }  catch(e) {
@@ -60,6 +58,6 @@ Then('the pipelineOrder is {string}', function (expectedOrder) {
     let actualOrder = interpreterHolder.getInterpreter().pipelineOrder;
     expectedOrder = expectedOrder.split(",");
     for (var i = 0; i < actualOrder.length; i++) {
-        assert.equal(actualOrder[i], expectedOrder[i]);
+        assert.equal(expectedOrder[i], actualOrder[i][0]);
     }
 });
