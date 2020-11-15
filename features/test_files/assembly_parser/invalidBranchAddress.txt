@@ -8,7 +8,7 @@ beq x0, x1, 8
 addi x2, x0, 3
 beq x0, x2, molx
 addi x3, x0, 4
-beq x0, x3, 128
+beq x0, x3, 22
 jal x30, fine
 xomma:
 add x3, x1, x2

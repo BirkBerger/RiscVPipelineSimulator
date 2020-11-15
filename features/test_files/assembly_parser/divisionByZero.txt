@@ -1,0 +1,10 @@
+x9:
+beq x0, x2, x10
+addi x10, x0, 1
+jal x1, x10
+addi x2, x9, 10
+addi x9, x0, 1
+x10:
+addi x1, x3, 2
+div x2, x1, x0
+addi x2, x0, 3
