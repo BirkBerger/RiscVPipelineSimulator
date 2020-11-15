@@ -8,7 +8,7 @@
 #      """
 #      Error in...
 #      line 3:
-#      - Unexpected number of instruction fields
+#      - unexpected number of instruction fields
 #
 #      """
 #

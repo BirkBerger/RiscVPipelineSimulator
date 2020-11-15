@@ -116,30 +116,79 @@ Feature: Assembler
     """
 
   Scenario:
-    Given that the assembly program "branch_and_jump.txt" is input
+    Given that the assembly program "load.txt" is input
     And the program is assembled and stored in memory
     Then there are 4 bytes for every program instruction
     And the memory byte array starting at address zero is
     """
-
+    93,04,80,00,
+    93,00,f0,7f,
+    23,90,14,00,
+    23,91,14,00,
+    23,92,14,00,
+    23,93,14,00,
+    23,94,14,00,
+    23,95,14,00,
+    03,81,04,00,
+    83,a1,04,00,
+    03,a2,04,00,
+    83,92,04,00,
+    03,d3,04,00,
+    83,83,04,00,
+    03,c4,04,00,
+    03,c0,04,00
     """
-#  0x0000003c	03	c0	04	00
-#  0x00000038	03	c4	04	00
-#  0x00000034	83	83	04	00
-#  0x00000030	03	d3	04	00
-#  0x0000002c	83	92	04	00
-#  0x00000028	03	a2	04	00
-#  0x00000024	83	a1	04	00
-#  0x00000020	03	81	04	00
-#  0x0000001c	23	95	14	00
-#  0x00000018	23	94	14	00
-#  0x00000014	23	93	14	00
-#  0x00000010	23	92	14	00
-#  0x0000000c	23	91	14	00
-#  0x00000008	23	90	14	00
-#  0x00000004	93	00	f0	7f
-#  0x00000000	93	04	80	00
 
+  Scenario:
+    Given that the assembly program "logic.txt" is input
+    And the program is assembled and stored in memory
+    Then there are 4 bytes for every program instruction
+    And the memory byte array starting at address zero is
+    """
+    93,04,90,7d,
+    13,05,80,78,
+    b3,70,95,00,
+    13,71,85,57,
+    b3,61,95,00,
+    13,62,85,57,
+    b3,42,95,00,
+    13,43,85,57
+    """
 
+  Scenario:
+    Given that the assembly program "shift.txt" is input
+    And the program is assembled and stored in memory
+    Then there are 4 bytes for every program instruction
+    And the memory byte array starting at address zero is
+    """
+    93,00,f0,ff,
+    13,05,a0,00,
+    93,03,70,03,
+    b3,83,73,02,
+    b3,83,73,02,
+    b3,83,73,02,
+    b3,83,13,02,
+    33,91,a3,00,
+    13,92,43,00,
+    33,d3,a3,00,
+    93,d4,33,00,
+    33,d6,a3,40,
+    13,d7,33,40
+    """
 
+  Scenario:
+    Given that the assembly program "store.txt" is input
+    And the program is assembled and stored in memory
+    Then there are 4 bytes for every program instruction
+    And the memory byte array starting at address zero is
+    """
+    93,02,50,ad,
+    93,01,30,00,
+    93,05,b0,00,
+    93,0e,d0,01,
+    23,8f,5e,0c,
+    a3,a4,55,00,
+    a3,10,50,00,
+    a3,82,51,00
+    """
 
