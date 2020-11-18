@@ -1,7 +1,7 @@
 Feature: Assembler
-  Description: Check that an assembly program is correctly converted to binary and correctly stored in memory.
+  Description: Check that an assembly program is correctly converted to binary and stored in memory.
 
-  Scenario:
+  Scenario: Random program 1
     Given that the assembly program "program1.txt" is input
     And the program is assembled and stored in memory
     Then there are 4 bytes for every program instruction
@@ -20,7 +20,7 @@ Feature: Assembler
     37,96,09,02
     """
 
-  Scenario:
+  Scenario: Random program 2
     Given that the assembly program "program2.txt" is input
     And the program is assembled and stored in memory
     Then there are 4 bytes for every program instruction
@@ -41,7 +41,7 @@ Feature: Assembler
     a3,15,85,22
     """
 
-  Scenario:
+  Scenario: Arithmetic instructions
     Given that the assembly program "arithmetic.txt" is input
     And the program is assembled and stored in memory
     Then there are 4 bytes for every program instruction
@@ -80,7 +80,7 @@ Feature: Assembler
     33,5b,94,02
     """
 
-  Scenario:
+  Scenario: Branch and jump instructions
     Given that the assembly program "branch_and_jump.txt" is input
     And the program is assembled and stored in memory
     Then there are 4 bytes for every program instruction
@@ -115,7 +115,7 @@ Feature: Assembler
     37,96,09,02
     """
 
-  Scenario:
+  Scenario: Load instructions
     Given that the assembly program "load.txt" is input
     And the program is assembled and stored in memory
     Then there are 4 bytes for every program instruction
@@ -139,7 +139,7 @@ Feature: Assembler
     03,c0,04,00
     """
 
-  Scenario:
+  Scenario: Logical instructions
     Given that the assembly program "logic.txt" is input
     And the program is assembled and stored in memory
     Then there are 4 bytes for every program instruction
@@ -155,7 +155,7 @@ Feature: Assembler
     13,43,85,57
     """
 
-  Scenario:
+  Scenario: Shift instructions
     Given that the assembly program "shift.txt" is input
     And the program is assembled and stored in memory
     Then there are 4 bytes for every program instruction
@@ -176,7 +176,7 @@ Feature: Assembler
     13,d7,33,40
     """
 
-  Scenario:
+  Scenario: Store instructions
     Given that the assembly program "store.txt" is input
     And the program is assembled and stored in memory
     Then there are 4 bytes for every program instruction
@@ -192,7 +192,7 @@ Feature: Assembler
     a3,82,51,00
     """
 
-  Scenario:
+  Scenario: Instructions not supported by Venus
     Given that the assembly program "instructionsNotSupportedByVenus.txt" is input
     And the program is assembled and stored in memory
     Then there are 4 bytes for every program instruction

@@ -1,5 +1,5 @@
 Feature: Assembly parser
-  Description: input different assembly snippets and check that errors are being reported properly
+  Description: Input different assembly snippets and check that errors are being reported properly
 
   # fail
   Scenario: Too many instruction fields
@@ -109,7 +109,7 @@ Feature: Assembly parser
       """
 
   # fail
-  Scenario: Empty file
+  Scenario: Runtime error
     Given that the assembly editor holds the content of "runtimeError.txt"
     Then the error message is thrown
       """
@@ -117,7 +117,7 @@ Feature: Assembly parser
       """
 
    # fail
-  Scenario: Empty file
+  Scenario: Division by zero
     Given that the assembly editor holds the content of "divisionByZero.txt"
     Then the error message is thrown
       """

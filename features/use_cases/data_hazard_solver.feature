@@ -1,7 +1,6 @@
-Feature: Hazard solver
-  Description: input different assembly snippets and make sure hazards are being detected and solved properly
+Feature: Data hazard solver
+  Description: Input different assembly snippets and make sure data hazards are being detected and solved properly
 
-  # data hazard
   Scenario: Store in rd from ALU
     Given that the assembly editor holds the input with no errors: "storeFromALU.txt"
     And the assembly code is cleaned
@@ -10,7 +9,6 @@ Feature: Hazard solver
     And there is a forwarding line from line 0 at cc 2.5 to line 1 at 1.5
     And there is a forwarding line from line 0 at cc 2.5 to line 2 at 1.5
 
-  # data hazard
   Scenario: Store in rd from memory
     Given that the assembly editor holds the input with no errors: "storeFromMemory.txt"
     And the assembly code is cleaned
@@ -19,7 +17,6 @@ Feature: Hazard solver
     And there is a forwarding line from line 0 at cc 3.5 to line 2 at 1.5
     And there is a stall at line 1
 
-  # data hazard
   Scenario: Store same rd twice in a row
     Given that the assembly editor holds the input with no errors: "rdWrittenTwice.txt"
     And the assembly code is cleaned
@@ -28,7 +25,6 @@ Feature: Hazard solver
     And there is a forwarding line from line 1 at cc 2.5 to line 2 at 1.5
     And there is a forwarding line from line 2 at cc 2.5 to line 3 at 1.5
 
-  # data hazard
   Scenario: Fetch with "store" instruction
     Given that the assembly editor holds the input with no errors: "storeInstructionFetch.txt"
     And the assembly code is cleaned
@@ -37,7 +33,6 @@ Feature: Hazard solver
     And there is a forwarding line from line 0 at cc 2.5 to line 1 at 2.5
     And there is a forwarding line from line 4 at cc 3.5 to line 5 at 2.5
 
-  # data hazard
   Scenario: Fetch register holding memory address
     Given that the assembly editor holds the input with no errors: "memAddressInReg.txt"
     And the assembly code is cleaned
@@ -49,7 +44,6 @@ Feature: Hazard solver
     And there is a forwarding line from line 4 at cc 3.5 to line 5 at 2.5
     And there is a forwarding line from line 4 at cc 3.5 to line 6 at 1.5
 
-  # data hazard
   Scenario: Stall that solves more than one hazard
     Given that the assembly editor holds the input with no errors: "multipleStalls.txt"
     And the assembly code is cleaned

@@ -29,5 +29,3 @@ div x18, x11, x9
 divu x24, x11, x9
 div x23, x8, x9
 divu x22, x8, x9
-
-

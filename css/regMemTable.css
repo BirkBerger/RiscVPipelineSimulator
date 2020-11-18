@@ -15,16 +15,13 @@
 
 }
 
-#register-memory-table td {
-    border: 1px solid #9f9f9f;
-}
-
 /* Rows */
 #register-memory-table tr {
     font-size: 13px;
     line-height: 5px;
     height: 20px;
     text-align: center;
+    border-bottom: 1px solid #9f9f9f;
 }
 
 #reg-name-cell {
@@ -35,14 +32,13 @@
     width: 50%;
 }
 
-#register-memory-table tr:first-child td {
-    border-top: 0;
-}
-
 #register-memory-table tr td:first-child {
-    border-left: 0;
+    border-right: 1px solid #9f9f9f;
 }
 
-#register-memory-table tr td:last-child {
-    border-right: 0;
+#three-dots-cell {
+    width: 10px;
+    height: 10px;
+    background-image: radial-gradient(circle, black 1px, transparent 1.1px);
+    background-size: 100% 33.33%;
 }

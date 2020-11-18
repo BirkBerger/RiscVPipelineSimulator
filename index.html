@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Risc-V PipelineVisuals Simulator</title>
+        <title>Risc-V Pipeline Simulator</title>
 
 <!--        jQuery-->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
@@ -10,24 +10,25 @@
         <script type="text/javascript" src="lib/exceptions/infiniteLoopException.js"></script>
         <script type="text/javascript" src="lib/exceptions/divisionByZeroException.js"></script>
 
-<!--        my js files related to assembly editor-->
+<!--        my js files related to Model-->
         <script type="text/javascript" src="lib/model/assemblyErrorDetector.js"></script>
         <script type="text/javascript" src="lib/model/assemblyParser.js"></script>
         <script type="text/javascript" src="lib/model/assemblyCleaner.js"></script>
+        <script type="text/javascript" src="lib/model/assembler.js"></script>
         <script type="text/javascript" src="lib/model/assemblyInterpreter.js"></script>
-
-<!--        my js files related to pipeline table-->
         <script type="text/javascript" src="lib/model/controlHazardHandler.js"></script>
         <script type="text/javascript" src="lib/model/dataHazardHandler.js"></script>
         <script type="text/javascript" src="lib/model/hazardHandler.js"></script>
-        <script type="text/javascript" src="lib/view/pipelineVisuals.js"></script>
 
-<!--        my js files with jQuery code-->
-        <script type="text/javascript" src="lib/view/regMemVisuals.js"></script>
+<!--        my js files related to Controller-->
         <script type="text/javascript" src="lib/controllers/assemblyEditorController.js"></script>
         <script type="text/javascript" src="lib/controllers/pipelineController.js"></script>
         <script type="text/javascript" src="lib/controllers/solverSwitchController.js"></script>
         <script type="text/javascript" src="lib/controllers/regMemController.js"></script>
+
+<!--        my js files related to View-->
+        <script type="text/javascript" src="lib/view/pipelineVisuals.js"></script>
+        <script type="text/javascript" src="lib/view/regMemVisuals.js"></script>
 
 <!--        my css files -->
         <link rel="stylesheet" href="css/grid.css">
