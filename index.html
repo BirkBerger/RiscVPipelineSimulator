@@ -31,6 +31,7 @@
 <!--        my js files related to View-->
         <script type="text/javascript" src="lib/view/pipelineVisuals.js"></script>
         <script type="text/javascript" src="lib/view/regMemVisuals.js"></script>
+        <script type="text/javascript" src="lib/view/solverSwitchVisuals.js"></script>
 
 <!--        my css files -->
         <link rel="stylesheet" href="css/grid.css">
@@ -99,7 +100,7 @@
                         <fieldset>
                             <label class="switch round">
                                 <input type="checkbox" id="solve-data-hazards" onclick="solverSwitched()">
-                                <span class="slider round"></span>
+                                <span class="slider round data"></span>
                             </label>
                         </fieldset>
                     </form>
@@ -113,7 +114,7 @@
                         <fieldset>
                             <label class="switch round">
                                 <input type="checkbox" id="solve-control-hazards" onclick="solverSwitched()">
-                                <span class="slider round"></span>
+                                <span class="slider round control"></span>
                             </label>
                         </fieldset>
                     </form>
