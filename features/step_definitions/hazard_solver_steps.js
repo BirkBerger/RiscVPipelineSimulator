@@ -2,11 +2,11 @@ const {After, Before, Given, When, Then } = require('cucumber');
 const assert = require('assert');
 const fs = require('fs')
 const HazardHandler = require("../../lib/model/hazardHandler");
-const HazardHandlerHolder = require("../../lib/holders/hazardHandlerHolder");
-const CleanerHolder = require("../../lib/holders/cleanerHolder");
-const CodeHolder = require("../../lib/holders/codeHolder");
+const HazardHandlerHolder = require("../holders/hazardHandlerHolder");
+const CleanerHolder = require("../holders/cleanerHolder");
+const CodeHolder = require("../holders/codeHolder");
 const AssemblyParser = require("../../lib/model/assemblyParser");
-const ParserHolder = require("../../lib/holders/parserHolder");
+const ParserHolder = require("../holders/parserHolder");
 const AssemblyCleaner = require("../../lib/model/assemblyCleaner");
 
 let codeHolder;

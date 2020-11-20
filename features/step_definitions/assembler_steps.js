@@ -3,9 +3,9 @@ const assert = require('assert');
 const fs = require('fs')
 const AssemblyParser = require("../../lib/model/assemblyParser");
 const AssemblyCleaner = require("../../lib/model/assemblyCleaner");
-const CleanerHolder = require("../../lib/holders/cleanerHolder");
+const CleanerHolder = require("../holders/cleanerHolder");
 const Assembler = require("../../lib/model/assembler");
-const AssemblerHolder = require("../../lib/holders/assemblerHolder");
+const AssemblerHolder = require("../holders/assemblerHolder");
 
 let cleanerHolder;
 let assemblerHolder;
@@ -21,7 +21,7 @@ Given('that the assembly program {string} is input', function (fileName) {
 
 Given('the program is assembled and stored in memory', function () {
     let assembler = new Assembler(cleanerHolder.getCleaner().lineNumberByLabel);
-    assembler.putAssemblyInMemory(cleanerHolder.getCleaner().cleanCode);
+    assembler.initializeMemory(cleanerHolder.getCleaner().cleanCode);
     assemblerHolder = new AssemblerHolder(assembler);
 });
 

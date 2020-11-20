@@ -4,7 +4,7 @@ const fs = require('fs')
 const AssemblyParser = require("../../lib/model/assemblyParser");
 const AssemblyCleaner = require("../../lib/model/assemblyCleaner");
 const AssemblyInterpreter = require("../../lib/model/assemblyInterpreter");
-const ErrorMessageHolder = require('../../lib/holders/errorMessageHolder');
+const ErrorMessageHolder = require('../holders/errorMessageHolder');
 
 let errorMessageHolder;
 
