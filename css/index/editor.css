@@ -43,3 +43,26 @@
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
     /* Lowering the shadow */
 }
+
+.info-button-container {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-self: flex-end;
+    padding-bottom: 5px;
+}
+
+#info-button {
+    background-color: #B3B3B3;
+    border: none;
+    color: white;
+    height: 22px;
+    width: 22px;
+    font-family: Tahoma, Geneva, sans-serif;
+    outline: white;
+    border-radius: 50%;
+}
+
+#info-button:hover {
+    background-color: #808080;
+}

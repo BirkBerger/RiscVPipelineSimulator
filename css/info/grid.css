@@ -1,0 +1,42 @@
+.about-title-container {
+    grid-area: about-title-container;
+}
+
+.instruction-table-title-container {
+    grid-area: instruction-table-title-container;
+}
+
+.instruction-table-container {
+    grid-area: instruction-table-container;
+}
+
+.guide-title-container {
+    grid-area: guide-title-container;
+}
+
+.guide-container {
+    grid-area: guide-container;
+}
+
+.about-container {
+    grid-area: about-container;
+}
+
+.grid {
+    justify-content: center;
+    margin: 2%;
+    grid-gap: 20px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1% 2% auto 2% auto 1% 2% auto 1%;
+    grid-template-areas:
+    "."
+    "about-title-container"
+    "about-container"
+    "instruction-table-title-container"
+    "instruction-table-container"
+    "."
+    "guide-title-container"
+    "guide-container"
+    "."
+}

@@ -55,6 +55,10 @@
     grid-area: memory-title-container;
 }
 
+.info-button-container {
+    grid-area: info-button-container;
+}
+
 
 [class*=-button] {
     justify-self: center;
@@ -79,7 +83,7 @@
             2% 467px 2% 2%
             2% 2% 20px 340px 2%;
     grid-template-areas:
-    ". ."
+    "info-button-container info-button-container"
     "editor-title-container editor-title-container"
     "editor-container editor-container"
     "pipeline-button-container pipeline-button-container"
@@ -103,16 +107,16 @@
         margin: 2%;
         grid-gap: 10px;
         display: grid;
-        grid-template-columns: 20% 430px 220px 10% 10%;
+        grid-template-columns: 18% 2% 430px 220px 10% 10%;
         grid-template-rows: 6% 4% 90px 20px 340px 4% 5% 25%;
         grid-template-areas:
-        ". . . . ."
-        "editor-title-container pipeline-title-container pipeline-title-container . ."
-        "editor-container pipeline-container pipeline-container register-title-container memory-title-container"
-        "editor-container pipeline-container pipeline-container register-memory-slider-container register-memory-slider-container"
-        "editor-container pipeline-container pipeline-container register-memory-container register-memory-container"
-        "pipeline-button-container hazard-feedback-container solve-data-hazards-container . ."
-        "pipeline-button-container hazard-feedback-container solve-control-hazards-container . ."
-        "code-feedback-container code-feedback-container code-feedback-container code-feedback-container code-feedback-container"
+        ". . . . . ."
+        "editor-title-container info-button-container pipeline-title-container pipeline-title-container . ."
+        "editor-container editor-container pipeline-container pipeline-container register-title-container memory-title-container"
+        "editor-container editor-container pipeline-container pipeline-container register-memory-slider-container register-memory-slider-container"
+        "editor-container editor-container pipeline-container pipeline-container register-memory-container register-memory-container"
+        "pipeline-button-container pipeline-button-container hazard-feedback-container solve-data-hazards-container . ."
+        "pipeline-button-container pipeline-button-container hazard-feedback-container solve-control-hazards-container . ."
+        "code-feedback-container code-feedback-container code-feedback-container code-feedback-container code-feedback-container code-feedback-container"
     }
 }

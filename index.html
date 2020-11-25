@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Risc-V Pipeline Simulator</title>
+        <title>RISC-V Pipeline Simulator</title>
 
 <!--        jQuery-->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
@@ -35,13 +35,13 @@
         <script type="text/javascript" src="lib/view/solverSwitchVisuals.js"></script>
 
 <!--        my css files -->
-        <link rel="stylesheet" href="css/grid.css">
-        <link rel="stylesheet" href="css/editor.css">
-        <link rel="stylesheet" href="css/pipeline.css">
-        <link rel="stylesheet" href="css/regMemTable.css">
-        <link rel="stylesheet" href="css/regMemSlider.css">
-        <link rel="stylesheet" href="css/solverSwitch.css">
-        <link rel="stylesheet" href="css/texts.css">
+        <link rel="stylesheet" href="css/index/grid.css">
+        <link rel="stylesheet" href="css/index/editor.css">
+        <link rel="stylesheet" href="css/index/pipeline.css">
+        <link rel="stylesheet" href="css/index/regMemTable.css">
+        <link rel="stylesheet" href="css/index/regMemSlider.css">
+        <link rel="stylesheet" href="css/index/solverSwitch.css">
+        <link rel="stylesheet" href="css/index/texts.css">
         <script src="jquery.line.js"></script>
 
 <!--        Bootstrap-->
@@ -54,10 +54,6 @@
         <script type="text/javascript" src="codemirror/addon/display/placeholder.js"></script>
         <script type="text/javascript" src="codemirror/mode/verilog/verilog.js"></script>
         <script type="text/javascript" src="codemirror/theme/eclipse.css"></script>
-
-<!--        DataTables-->
-<!--        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">-->
-<!--        <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>-->
 
     </head>
 
@@ -76,7 +72,7 @@
             </div>
 
             <div class="pipeline-button-container">
-                <button id="pipeline-instructions-button">Pipeline instructions</button>
+                <button id="pipeline-instructions-button">Pipeline Instructions</button>
             </div>
 
             <div class="code-feedback-container">
@@ -85,7 +81,7 @@
 
             <div class="pipeline-container">
                 <div class="table-container">
-                    <div class="pipeline-placeholder">Click on "Pipeline instructions" to see your RISC-V instructions pipelined here</div>
+                    <div class="pipeline-placeholder">Click on "Pipeline Instructions" to see your RISC-V instructions pipelined here</div>
                     <div class="table-wrapper"></div>
                 </div>
             </div>
@@ -146,6 +142,12 @@
 
             <div class="editor-title-container">RISC-V Assembly Code</div>
             <div class="pipeline-title-container">Five-stage Pipeline</div>
+
+
+            <div class="info-button-container">
+                <button id="info-button" onclick=" window.open('info.html', '_blank'); return false;">?</button>
+            </div>
+
         </div>
 
     </body>

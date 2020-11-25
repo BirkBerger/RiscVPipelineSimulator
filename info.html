@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Information | RISC-V Pipeline Simulator</title>
+
+    <!--        jQuery-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+    <!--        my css files -->
+    <link rel="stylesheet" href="css/info/grid.css">
+    <link rel="stylesheet" href="css/info/texts.css">
+    <link rel="stylesheet" href="css/info/instructionTable.css">
+
+    <!--        Bootstrap-->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+
+    <div class="grid">
+
+        <div class="about-title-container">About</div>
+
+        <div class="about-container">
+            <p>
+                The RISC-V Pipeline Simulator has been developed as a learning environment,
+                <br>to teach students in Computer Architecture how an assembly program is executed in a 5-stage pipeline.
+                <br>The students can enable and disable hazard solving, and thereby inspect their effects on the ordering of instructions.
+                <br>The RISC-V Pipeline Simulator offers a RISC-V assembly editor, a pipeline illustration with or with hazards,
+                and the display of register and memory content during execution.
+            </p>
+        </div>
+
+        <div class="instruction-table-title-container">Supported RISC-V Instructions</div>
+
+        <div class="instruction-table-container">
+            <table id="instruction-table">
+                <thead>
+                    <tr>
+                        <th>RV64I</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>RV64M</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>add rd, rs1, rs2</td>
+                        <td>jal rd, label</td>
+                        <td>sd rs2, offset(rs1)</td>
+                        <td>sraiw rd, rs1, shamt</td>
+                        <td>div rd, rs1, rs2</td>
+                    </tr>
+                    <tr>
+                        <td>addi rd, rs1, imm</td>
+                        <td>jalr rd, offset(rs1)</td>
+                        <td>sh rs2, offset(rs1)</td>
+                        <td>sraw rd, rs1, rs2</td>
+                        <td>divu rd, rs1, rs2</td>
+                    </tr>
+                    <tr>
+                        <td>addiw rd, rs1, imm</td>
+                        <td>lb rd, offset(rs1)</td>
+                        <td>sw rs2, offset(rs1)</td>
+                        <td>srl rd, rs1, rs2</td>
+                        <td>divuw rd, rs1, rs2</td>
+                    </tr>
+                    <tr>
+                        <td>addw rd, rs1, rs2</td>
+                        <td>lbu rd, offset(rs1)</td>
+                        <td>sll rd, rs1, rs2</td>
+                        <td>srli rd, rs1, shamt</td>
+                        <td>divw rd, rs1, rs2</td>
+                    </tr>
+                    <tr>
+                        <td>and rd, rs1, rs2</td>
+                        <td>ld rd, offset(rs1)</td>
+                        <td>slli rd, rs1, shamt</td>
+                        <td>srliw rd, rs1, shamt</td>
+                        <td>mul rd, rs1, rs2</td>
+                    </tr>
+                    <tr>
+                        <td>andi rd, rs1, imm</td>
+                        <td>lh rd, offset(rs1)</td>
+                        <td>slliw rd, rs1, shamt</td>
+                        <td>srlw rd, rs1, rs2</td>
+                        <td>mulh rd, rs1, rs2</td>
+                    </tr>
+                    <tr>
+                        <td>auipc rd, imm</td>
+                        <td>lhu rd, offset(rs1)</td>
+                        <td>sllw rd, rs1, rs2</td>
+                        <td>sub rd, rs1, rs2</td>
+                        <td>mulhsu rd, rs1, rs2</td>
+                    </tr>
+                    <tr>
+                        <td>beq rs1, rs2, target</td>
+                        <td>lw rd, offset(rs1)</td>
+                        <td>slt rd, rs1, rs2</td>
+                        <td>subw rd, rs1, rs2</td>
+                        <td>mulhu rd, rs1, rs2</td>
+                    </tr>
+                    <tr>
+                        <td>bge rs1, rs2, target</td>
+                        <td>lwu rd, offset(rs1)</td>
+                        <td>slti rd, rs1, imm</td>
+                        <td>xor rd, rs1, rs2</td>
+                        <td>mulw rd, rs1, rs2</td>
+                    </tr>
+                    <tr>
+                        <td>bgeu rs1, rs2, target</td>
+                        <td>lui rd, imm</td>
+                        <td>sltiu rd, rs1, imm</td>
+                        <td>xori rd, rs1, imm</td>
+                        <td>rem rd, rs1, rs2</td>
+                    </tr>
+                    <tr>
+                        <td>blt rs1, rs2, target</td>
+                        <td>or rd, rs1, rs2</td>
+                        <td>sltu rd, rs1, rs2</td>
+                        <th>Not supported:</th>
+                        <td>remu rd, rs1, rs2</td>
+                    </tr>
+                    <tr>
+                        <td>bltu rs1, rs2, target</td>
+                        <td>ori rd, rs1, imm</td>
+                        <td>sra rd, rs1, rs2</td>
+                        <td>ebreak</td>
+                        <td>emuw rd, rs1, rs2</td>
+                    </tr>
+                    <tr>
+                        <td>bne rs1, rs2, target</td>
+                        <td>sb rs2, offset(rs1)</td>
+                        <td>srai rd, rs1, shamt</td>
+                        <td>ecall</td>
+                        <td>remw rd, rs1, rs2</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+        <div class="guide-title-container">How to use the RISC-V Pipeline Simulator</div>
+        <div class="guide-container">
+            <ol>
+                <li>
+                    Type a RISC-V assembly program in the RISC-V Assembly Code editor.
+                    <br>The table above shows all the instruction types that you can use in your program.
+                </li>
+                <li>
+                    Press the button "Pipeline Instructions" to see your assembly program in the pipeline.
+                    <br>Use the error feedback in the window below the "Pipeline Instructions" button to correct
+                    your assembly code, if nothing appears in the Five-stage Pipeline window.
+                    <br>Once your program is free of error, press the button again, and your program should appear in the pipeline.
+                </li>
+                <li>
+                    There are five stages connected by a wire in the Five-stage Pipeline, one for every instruction in your assembly code.
+                    <br>Click on the line numbers in the assembly editor, to locate an instruction in the pipeline.
+                </li>
+                <li>
+                    Your assembly program contains either both data and control hazards, only data hazards, only control hazards, or no hazards.
+                    <br>The two switches underneath the Five-stage pipeline are enabled depending on which hazard types occur.
+                    <br>The switch color coding can be read as follows:
+                    <ul>
+                        <li>The switch is enabled and unchecked.</li>
+                        <li>The switch is enabled and checked.</li>
+                        <li>The switch is disabled.</li>
+                    </ul>
+                    Click on an enabled switch to see hazards being solved in the pipeline illustration.
+                    <br>The lines across the pipeline represents forwarding of data in the case of data hazards.
+                    <br>Bubble figures show the stall of an instruction in case of a data hazard.
+                    <br>Changed order and frequency of instructions show that the branch and jump instructions has been evaluated as a solution to control hazards.
+                    <br>Wave figures show the flushing of instructions in case of wrongly predicted instruction order as a solution to control hazards.
+                </li>
+                <li>
+                    When both switches are checked, and the pipeline is free of hazards, the register and memory contents can be explored.
+                    <br>Click on a clock cycle in the pipeline illustration header, to see the contents at that time in the register/memory table.
+                    <br>Click on the rectangular switch above the register/memory table to change between register and memory display.
+                </li>
+            </ol>
+        </div>
+
+    </div>
+
+</body>
+</html>
