@@ -1,8 +1,9 @@
 const {After, Before, Given, When, Then } = require('cucumber');
 const assert = require('assert');
 const fs = require('fs')
-const CodeHolder = require("../holders/codeHolder");
 const AssemblyParser = require("../../lib/model/assemblyParser");
+const Assembler = require("../../lib/model/assembler");
+const CodeHolder = require("../holders/codeHolder");
 const ParserHolder = require("../holders/parserHolder");
 const AssemblyCleaner = require("../../lib/model/assemblyCleaner");
 const CleanerHolder = require("../holders/cleanerHolder");
@@ -29,7 +30,7 @@ Given('the code is cleaned', function () {
 });
 
 Given('the code is interpreted', function () {
-    let interpreter = new AssemblyInterpreter(cleanerHolder.getCleaner().lineNumberByLabel);
+    let interpreter = new AssemblyInterpreter(cleanerHolder.getCleaner().lineNumberByLabel,[],false);
     try {
         interpreter.interpretCleanAssemblyCode(cleanerHolder.getCleaner().cleanCode);
     }  catch(e) {
@@ -50,8 +51,8 @@ Then('the result of register {string} is {string}', function (regName, expectedR
 });
 
 Then('the value at memory address {int} is {int}', function (memAddress, memValue) {
-    let dataMem = interpreterHolder.getInterpreter().dataMem;
-    assert.equal(dataMem[memAddress], memValue);
+    let memLog = interpreterHolder.getInterpreter().memLog;
+    assert.equal(memLog[memAddress], memValue);
 });
 
 Then('the pipelineOrder is {string}', function (expectedOrder) {
