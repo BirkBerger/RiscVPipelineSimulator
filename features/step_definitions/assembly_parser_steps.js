@@ -19,7 +19,8 @@ Given("that the assembly editor holds the content of {string}", function (textFi
     // check for runtime error and division by zero
     if (errorMessage === "") {
         cleaner.cleanAssemblyCode(code, parser.instructionSignals);
-        let interpreter = new AssemblyInterpreter(cleaner.lineNumberByLabel);
+        let initialMem = getEmptyMemory(cleaner.cleanCode.length);
+        let interpreter = new AssemblyInterpreter(cleaner.lineNumberByLabel,initialMem,true);
         try {
             interpreter.interpretCleanAssemblyCode(cleaner.cleanCode);
         } catch (e) {
@@ -37,3 +38,11 @@ Given("that the assembly editor holds the content of {string}", function (textFi
 Then("the error message is thrown", function (expectedErrorMessage) {
     assert.equal(errorMessageHolder.getErrorMessage().replace(/\t/g, ''),expectedErrorMessage);
 });
+
+function getEmptyMemory(length) {
+    var initialMem = [];
+    for (var i = 0; i < length * 4; i++) {
+        initialMem.push(0n);
+    }
+    return initialMem;
+}

@@ -30,7 +30,8 @@ Given('the code is cleaned', function () {
 });
 
 Given('the code is interpreted', function () {
-    let interpreter = new AssemblyInterpreter(cleanerHolder.getCleaner().lineNumberByLabel,[],false);
+    let initialMem = getEmptyMemory(cleanerHolder.getCleaner().cleanCode.length);
+    let interpreter = new AssemblyInterpreter(cleanerHolder.getCleaner().lineNumberByLabel,initialMem,false);
     try {
         interpreter.interpretCleanAssemblyCode(cleanerHolder.getCleaner().cleanCode);
     }  catch(e) {
@@ -44,21 +45,30 @@ Given('the code is interpreted', function () {
 });
 
 Then('the result of register {string} is {string}', function (regName, expectedRegValue) {
-    let registersByTime = interpreterHolder.getInterpreter().registerLog;
-    let endCC = Object.keys(registersByTime).length - 1;
+    let registerLog = interpreterHolder.getInterpreter().registerLog;
+    let endCC = registerLog.length - 1;
     let regNumber = regName.substring(1,regName.length);
-    assert.equal(registersByTime[endCC][regNumber], expectedRegValue);
+    assert.equal(registerLog[endCC][regNumber], expectedRegValue);
 });
 
 Then('the value at memory address {int} is {int}', function (memAddress, memValue) {
     let memLog = interpreterHolder.getInterpreter().memLog;
-    assert.equal(memLog[memAddress], memValue);
+    let endCC = memLog.length - 1;
+    assert.equal(memLog[endCC][memAddress], memValue);
 });
 
 Then('the pipelineOrder is {string}', function (expectedOrder) {
     let actualOrder = interpreterHolder.getInterpreter().pipelineOrder;
     expectedOrder = expectedOrder.split(",");
     for (var i = 0; i < actualOrder.length; i++) {
-        assert.equal(expectedOrder[i], actualOrder[i][0]);
+        assert.equal(actualOrder[i][0], expectedOrder[i]);
     }
 });
+
+function getEmptyMemory(length) {
+    var initialMem = [];
+    for (var i = 0; i < length * 4; i++) {
+        initialMem.push(0n);
+    }
+    return initialMem;
+}

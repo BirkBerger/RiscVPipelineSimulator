@@ -38,33 +38,14 @@ Given('the code is cleaned and assembled', function () {
 
 Given('the code is interpreted while still having data hazards', function () {
     let interpreter = new AssemblyInterpreter(cleanerHolder.getCleaner().lineNumberByLabel,assemblerHolder.getAssembler().initialMem,true);
-    try {
-        interpreter.interpretCleanAssemblyCode(cleanerHolder.getCleaner().cleanCode);
-        console.log("Register log:");
-        console.log(interpreter.registerLog);
-    }  catch(e) {
-        if (e.name === "InfiniteLoopException" || e.name === "DivisionByZeroException"  || e.name === "AddressOutOfBoundsException") {
-            console.log(e.message);
-        } else {
-            throw e
-        }
-    }
+
+    interpreter.interpretCleanAssemblyCode(cleanerHolder.getCleaner().cleanCode);
     interpreterHolder = new InterpreterHolder(interpreter);
 });
 
 Given('the code is interpreted with no data hazards', function () {
     let interpreter = new AssemblyInterpreter(cleanerHolder.getCleaner().lineNumberByLabel,assemblerHolder.getAssembler().initialMem,false);
-    try {
-        interpreter.interpretCleanAssemblyCode(cleanerHolder.getCleaner().cleanCode);
-        console.log("Register log:");
-        console.log(interpreter.registerLog);
-    }  catch(e) {
-        if (e.name === "InfiniteLoopException" || e.name === "DivisionByZeroException"  || e.name === "AddressOutOfBoundsException") {
-            console.log(e.message);
-        } else {
-            throw e
-        }
-    }
+    interpreter.interpretCleanAssemblyCode(cleanerHolder.getCleaner().cleanCode);
     interpreterHolder = new InterpreterHolder(interpreter);
 });
 
@@ -74,7 +55,15 @@ Then('the result of register {string} is {int} at cc {int}', function (regName, 
     assert.equal(registersByTime[cc][regNumber], expectedRegValue);
 });
 
-Then('the value at memory address {int} is {int} at cc {int}', function (memAddress, memValue, cc) {
+Then('the value at memory address {int} at cc {int} is {int}', function (address, cc, value) {
     let memLog = interpreterHolder.getInterpreter().memLog;
-    assert.equal(memLog[memAddress], memValue);
+    assert.equal(memLog[cc][address], value);
+});
+
+Then('the pipeline order is {string}', function (expectedOrder) {
+    let actualOrder = interpreterHolder.getInterpreter().pipelineOrder;
+    expectedOrder = expectedOrder.split(",");
+    for (var i = 0; i < actualOrder.length; i++) {
+        assert.equal(actualOrder[i][0], expectedOrder[i]);
+    }
 });

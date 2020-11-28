@@ -1,0 +1,4 @@
+addi x2, x0, -2
+addi x0, x0, 0
+sh x2, 8(x0)
+lb x3, 9(x0)
