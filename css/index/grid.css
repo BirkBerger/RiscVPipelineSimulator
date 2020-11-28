@@ -107,7 +107,7 @@
         margin: 2%;
         grid-gap: 10px;
         display: grid;
-        grid-template-columns: 18% 2% 430px 220px 10% 10%;
+        grid-template-columns: 17% 3% 430px 220px 10% 10%;
         grid-template-rows: 6% 4% 90px 20px 340px 4% 5% 25%;
         grid-template-areas:
         ". . . . . ."
