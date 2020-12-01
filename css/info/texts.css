@@ -21,3 +21,10 @@ li{
     margin: 10px 0;
     padding-left: 10px;
 }
+
+.author-container {
+    font-family: Palatino, 'Palatino Linotype', serif;
+    font-size: 15px;
+    color: #3F7F7F;
+    text-align: center;
+}

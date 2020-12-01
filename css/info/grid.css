@@ -22,13 +22,17 @@
     grid-area: about-container;
 }
 
+.author-container {
+    grid-area: author-container;
+}
+
 .grid {
     justify-content: center;
     margin: 2%;
     grid-gap: 20px;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 1% 2% auto 2% auto 1% 2% auto 1%;
+    grid-template-rows: 1% 2% auto 2% auto 1% 2% auto auto 1%;
     grid-template-areas:
     "."
     "about-title-container"
@@ -38,5 +42,6 @@
     "."
     "guide-title-container"
     "guide-container"
+    "author-container"
     "."
 }
