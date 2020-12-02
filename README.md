@@ -4,8 +4,8 @@
 This program has been developed as a bachelor thesis in software technology for the Technical University of Denmark.  
 It implements a RISC-V 5-stage pipeline simulator presented by graphical illustrations, executable in a web-browser.  
 
-Author: Thea Birk Berger
-Supervisor: Martin Schoeberl
+Author: Thea Birk Berger  
+Supervisor: Martin Schoeberl  
 
 ## Status
 The project was concluded on December 4th 2020.
