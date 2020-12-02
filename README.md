@@ -1,7 +1,7 @@
 # RiscVPipelineSimulator
 
 ## Description
-This program has been developed as a bachelor thesis in software technology for the Technical University of Denmark.\\
+This program has been developed as a bachelor thesis in software technology for the Technical University of Denmark.\n
 It implements a RISC-V 5-stage pipeline simulator presented by graphical illustrations, executable in a web-browser.
 
 Author: Thea Birk Berger
