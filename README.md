@@ -18,4 +18,4 @@ The project was concluded on December 4th 2020.
 * Codemirror has been imported for the RISC-V assembly editor.
 
 ## URL
-The website can be accessed [here](pipeline-riscv.com).
+The website can be accessed [here](http://pipeline-riscv.com).
